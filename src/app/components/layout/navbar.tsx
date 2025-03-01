@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { ModeToggle } from "./theme-toggle";
 import { Github, House } from "lucide-react";
 import { useTheme } from "next-themes";
 import RainbowButton from "./rainbow-button";
@@ -18,7 +17,7 @@ export function Navbar() {
 
   useEffect(() => {
     setTheme("dark");
-  }, [])
+  });
 
   console.log(theme);
   return (

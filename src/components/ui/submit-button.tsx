@@ -4,12 +4,10 @@ import styled from "styled-components";
 import { IoAddOutline } from "react-icons/io5";
 import { SubmitModal } from "@/app/components/layout/submit-modal";
 
-interface SubmitButtonProps {
-};
 
-export const SubmitButton: React.FC<SubmitButtonProps> = ({
-}) => {
+export const SubmitButton: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+
 
   const handleModal = () => {
     setIsModalOpen(true);

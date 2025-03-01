@@ -8,7 +8,7 @@ const About = () => {
         <h1 className="text-xl font-bold mb-8">About</h1>
         <p className="py-3">Hi there! Let me introduce myself.</p>
         <p className="mt-3">
-          I'm{" "}
+          I&apos;m{" "}
           <a
             href="https://klubinska.dev"
             target="_blank"

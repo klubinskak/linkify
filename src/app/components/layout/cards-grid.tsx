@@ -5,7 +5,7 @@ import { LinkModel } from "@/models/link";
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
-import axios from "axios";
+import axios, { AxiosError, AxiosResponse } from "axios";
 import { NotificationContext } from "@/app/context/notificationsContext";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
@@ -19,13 +19,12 @@ const CardsGrid: React.FC<CardsGridProps> = ({ totalLinks }) => {
   );
   const [email, setEmail] = useState("");
   const [loading, setIsLoading] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
   const { addNotification } = useContext(NotificationContext);
 
   useEffect(() => {
     async function fetchMetadata() {
       try {
-        let link = "https://knowt.com";
+        const link = "https://knowt.com";
         const response = await fetch(`/api/metadata?url=${link}`, {
           method: "GET",
           headers: {
@@ -51,7 +50,7 @@ const CardsGrid: React.FC<CardsGridProps> = ({ totalLinks }) => {
       .put("/api/newsletter", {
         email: email,
       })
-      .then((res: any) => {
+      .then((res: AxiosResponse) => {
         if (res.status === 200) {
           addNotification({
             message: "You subscribed successfully to Newsletter, thank you!",
@@ -62,7 +61,7 @@ const CardsGrid: React.FC<CardsGridProps> = ({ totalLinks }) => {
           console.error(res);
         }
       })
-      .catch((err: any) => {
+      .catch((err: AxiosError) => {
         console.log(err);
       })
       .finally(() => {

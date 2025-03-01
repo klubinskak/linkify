@@ -9,14 +9,13 @@ import {
 } from "@radix-ui/react-dialog";
 import React, { useContext } from "react";
 import { Input } from "@/components/ui/input";
-import axios from "axios";
+import axios, { AxiosError, AxiosResponse } from "axios";
 import { Checkbox } from "@/components/ui/checkbox";
 import { NotificationContext } from "@/app/context/notificationsContext";
 
 interface SubmitModalProps {
   isOpen: boolean;
   onClose: () => void;
-  data?: any[];
   className?: string;
 }
 
@@ -29,7 +28,6 @@ interface FormData {
 export const SubmitModal: React.FC<SubmitModalProps> = ({
   isOpen,
   onClose,
-  data,
   className,
 }) => {
   const [formData, setFormData] = React.useState<FormData>({
@@ -75,7 +73,7 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({
         email: formData.email,
         url: formData.link,
       })
-      .then((res: any) => {
+      .then((res: AxiosResponse) => {
         if (res.status === 200) {
           addNotification({
             message: "Your submission has been sent successfully. Thank you!",
@@ -94,7 +92,7 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({
         .put("/api/newsletter", {
           email: formData.email,
         })
-        .then((res: any) => {
+        .then((res: AxiosResponse) => {
           if (res.status === 200) {
             onClose();
           } else {
@@ -102,7 +100,7 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({
             setError("Something went wrong. Please try again.");
           }
         })
-        .catch((err: any) => {
+        .catch((err: AxiosError) => {
           console.log(err);
         });
     }

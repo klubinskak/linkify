@@ -28,7 +28,7 @@ export async function PUT(
     const json = await response.json();
     return NextResponse.json({message: "Sign up successfully", json}, {status: 200});
 
-  } catch (error: any) {
-    return NextResponse.json({message: "Coudn't sign up for Newsletter"}, {status: 500});
+  } catch (error: unknown) {
+    return NextResponse.json({message: "Coudn't sign up for Newsletter", error}, {status: 500});
   }
 }

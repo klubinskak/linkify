@@ -30,7 +30,9 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ message: "Data added successfully" }, { status: 200 });
+    /* eslint-disable @typescript-eslint/no-explicit-any */
   } catch (error: any) {
+    /* eslint-enable @typescript-eslint/no-explicit-any */
     console.error("Error writing to Google Sheets:", error?.response?.data || error.message || error);
     return NextResponse.json({ error: error?.message || "Failed to write data" }, { status: 500 });
   }
