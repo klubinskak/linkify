@@ -1,0 +1,48 @@
+{
+    "topic": "Languages",
+    "subtopics": [
+      {
+        "name": "English",
+        "links": [
+          {
+            "title": "English with Lucy",
+            "url": "https://www.youtube.com/@EnglishwithLucy"
+          }
+        ]
+      },
+      {
+        "name": "Spanish",
+        "links": [
+          {
+            "title": "Spanish After Hours",
+            "url": "https://www.youtube.com/@spanishafterhours/videos"
+          }
+        ]
+      },
+      {
+        "name": "French",
+        "links": [
+          {
+            "title": "Easy French",
+            "url": "https://www.youtube.com/@EasyFrench"
+          }
+        ]
+      },
+      {
+        "name": "Tools",
+        "links": [
+          {
+            "title": "Knowt",
+            "url": "https://knowt.com/",
+            "tags": ["Free"]
+          },
+          {
+            "title": "Anki",
+            "url": "https://apps.ankiweb.net/",
+            "tags": ["Free"]
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,48 @@
+{
+    "topic": "Programming Languages",
+    "subtopics": [
+      {
+        "name": "TypeScript",
+        "links": [
+            {
+                "title": "TypeScript Handbook",
+                "url": "https://www.typescriptlang.org/docs/handbook/intro.html"
+            },
+            {
+                "title": "Programming with Mosh",
+                "url": "https://www.youtube.com/@programmingwithmosh"
+            }
+        ]
+      },
+      {
+        "name": "C Sharp",
+        "links": [
+            {
+                "title": "C# Programming Guide",
+                "url": "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/"
+            },
+            {
+                "title": "IAmTimCorey",
+                "url": "https://www.youtube.com/@IAmTimCorey/videos"
+            }, 
+            {
+              "title": "Nick Chapsas",
+              "url": "https://www.youtube.com/channel/UCrkPsvLGln62OMZRO6K-llg"
+            },
+            {
+              "title": "C# Design Patterns",
+              "url": "https://www.dofactory.com/net/design-patterns"
+            },
+            {
+              "title": "Codecademy",
+              "url": "https://www.youtube.com/@codecademy/featured"
+            },
+            {
+              "title": "Refactoring Guru",
+              "url": "https://refactoring.guru/design-patterns/csharp"
+            }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,45 @@
+{
+  "topic": "AI",
+  "subtopics": [
+    {
+      "name": "Images",
+      "links": [
+        {
+          "title": "Lummi.ai",
+          "url": "https://www.lummi.ai/",
+          "tags": ["Free", "Random"]
+        },
+        {
+          "title": "DeepAI",
+          "url": "https://deepai.org/",
+          "tags": ["Free", "Paid"]
+        }
+      ]
+    },
+    {
+      "name": "Chatbots",
+      "links": [
+        {
+          "title": "Gemini",
+          "url": "https://gemini.google.com/app",
+          "tags": ["Free", "Paid"]
+        },
+        {
+          "title": "Claude AI",
+          "url": "https://claude.ai/",
+          "tags": ["Free", "Paid"]
+        }
+      ]
+    },
+    {
+      "name": "Videos",
+      "links": [
+        {
+          "title": "App Runwayml",
+          "url": "https://app.runwayml.com/",
+          "tags": ["Free", "Paid"]
+        }
+      ]
+    }
+  ]
+}

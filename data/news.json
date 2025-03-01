@@ -1,0 +1,49 @@
+{
+    "topic": "News",
+    "subtopics": [
+      {
+        "name": "Tech",
+        "links": [
+          {
+            "title": "Wired",
+            "url": "https://www.wired.com/"
+          },
+          {
+            "title": "TechCrunch",
+            "url": "https://techcrunch.com/"
+          }
+        ]
+      },
+      {
+        "name": "World",
+        "links": [
+          {
+            "title": "ColdFusion",
+            "url": "https://www.youtube.com/coldfusion/videos"
+          }, 
+          {
+            "title": "Wealth", 
+            "url": "https://www.instagram.com/wealth/"
+          }
+        ]
+      },
+      {
+        "name": "Business",
+        "links": [
+          {
+            "title": "Tranding View",
+            "url": "https://www.tradingview.com/markets/world-stocks/worlds-largest-companies/"
+          }, 
+          {
+            "title": "Finfab.app",
+            "url": "https://www.instagram.com/finfab.app/?g=5"
+          }, 
+          {
+            "title": "@thebetterbull", 
+            "url": "https://www.threads.net/@thebetterbull"
+          }
+        ]
+      }
+    ]
+  }
+  

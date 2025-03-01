@@ -1,0 +1,60 @@
+{
+  "topic": "Podcasts",
+  "subtopics": [
+    {
+      "name": "Tech",
+      "links": [
+        {
+          "title": "All-In Podcast",
+          "url": "https://open.spotify.com/show/2IqXAVFR4e0Bmyjsdc8QzF"
+        }, 
+        {
+          "title": "Hard Fork - The New York Times",
+          "url": "https://open.spotify.com/show/44fllCS2FTFr2x2kjP9xeT?si=588c759d3af04d23"
+        },
+        {
+          "title": "TED Tech",
+          "url": "https://open.spotify.com/show/1iwcjlgreRD0nJxgtdwMLx"
+        }
+      ]
+    },
+    {
+      "name": "Programming",
+      "links": [
+        {
+          "title": "Syntax",
+          "url": "https://open.spotify.com/show/4kYCRYJ3yK5DQbP5tbfZby"
+        },
+        {
+          "title": "Software Engineering Daily",
+          "url": "https://open.spotify.com/show/6UCtBYL29hwhw4YbTdX83N"
+        },
+        {
+          "title": "The Changelog",
+          "url": "https://open.spotify.com/show/5bBki72YeKSLUqyD94qsuJ"
+        }, 
+        {
+          "title": "The Bike Shed",
+          "url": "https://open.spotify.com/show/2GM7Lo15uxyqhIv5uXfBpM"
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "links": [
+        {
+          "title": "BBC Radio 4 - In Our Time",
+          "url": "https://open.spotify.com/show/17YfG23eMbfLBaDPqucgzZ"
+        },
+        {
+          "title": "Ologies with Alie Ward",
+          "url": "https://open.spotify.com/show/5nvRkVMH58SelKZYZFZx1S"
+        }, 
+        {
+          "title": "Huberman Lab",
+          "url": "https://www.youtube.com/@hubermanlab/featured"
+        }
+      ]
+    }
+  ]
+}

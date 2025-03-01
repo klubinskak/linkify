@@ -1,0 +1,51 @@
+{
+    "topic": "Languages",
+    "subtopics": [
+      {
+        "name": "React",
+        "links": [
+            {
+                "title": "JavaScript Mastery",
+                "url": "https://www.youtube.com/@javascriptmastery/featured",
+                "tags": ["Free"]
+            },
+            {
+                "title": "Theo - t3.gg",
+                "url": "https://www.youtube.com/@t3dotgg/featured",
+                "tags": ["Free"]
+            }
+        ]
+      },
+      {
+        "name": "Angular",
+        "links": [
+            {
+                "title": "Angular Docs",
+                "url": "https://angular.dev/overview",
+                "tags": ["Free"]
+            },
+            {
+                "title": "Mastering Angular 16 by ProAcademy",
+                "url": "https://www.youtube.com/playlist?list=PL1BztTYDF-QNlGo5-g65Xj1mINHYk_FM9",
+                "tags": ["Free"]
+            },
+            {
+                "title": "Made with Angular",
+                "url": "https://www.madewithangular.com/sites",
+                "tags": ["Free"]
+            },
+            {
+                "title": "Angular University",
+                "url": "https://www.youtube.com/@AngularUniversity",
+                "tags": ["Free"]
+            },
+            {
+                "title": "Joshua Morony",
+                "url": "https://www.youtube.com/@JoshuaMorony/videos",
+                "tags": ["Free"]
+            }
+        ]
+      }
+    ]
+  }
+  
