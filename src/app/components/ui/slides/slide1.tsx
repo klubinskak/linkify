@@ -12,8 +12,8 @@ export function Slide1({ image }: Slide1Props) {
         src={image}
         alt="Slide 1"
         width={1200}
-        height={1200}
-        className="absolute inset-0 w-full h-full object-cover"
+        height={1300}
+        className="absolute inset-0 w-full h-full object-fill md:object-cover"
       />
       <div className="relative text-white p-4 flex  items-center h-full">
         <div className="ml-4">
@@ -22,7 +22,7 @@ export function Slide1({ image }: Slide1Props) {
           </h3>
           <p className="text-[11px] mt-2 text-gray-400">Start exploring now!</p>
           <Link href="/podcasts/tech">
-            <button className="mt-12 cursor-pointer group relative bg-[#f8f9fa] hover:bg-zinc-300 text-black text-xs text-sm md:py-2 rounded-md transition-all duration-200 ease-in-out w-28 md:w-36 h-9">
+            <button className="mt-12 cursor-pointer group relative bg-[#f8f9fa] hover:bg-zinc-300 text-black text-xs text-sm md:py-2 rounded-md transition-all duration-200 ease-in-out w-28 md:w-36 h-7 md:h-9">
               <div className="relative flex items-center justify-center gap-2">
                 <span className="relative inline-block overflow-hidden">
                   <span className="block transition-transform duration-300 group-hover:-translate-y-full">
