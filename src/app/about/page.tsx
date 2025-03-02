@@ -20,7 +20,7 @@ const About = () => {
           , a Software Developer living and working in Poland 🇵🇱
         </p>
         <h1 className="font-bold text-xl pt-5 pb-2">🤔 Why I built Linkify? </h1>
-        <h3 className="pb-8">I've been sharing useful resources, such as websites, on my Threads profile and want to create a hub where I can easily organize them and share them with everyone :)</h3>
+        <h3 className="pb-8">I&apos;ve{" "}been sharing useful resources, such as websites, on my Threads profile and want to create a hub where I can easily organize them and share them with everyone :)</h3>
         <hr className="bg-white h-[2px]" />
         <div className="mt-8 flex flex-col gap-6">
           <p className="w-3/4">
