@@ -9,6 +9,7 @@ import { SidebarProvider } from "./context/sidebarContext";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { SubmitButton } from "@/components/ui/submit-button";
 import { NotificationProvider } from "./context/notificationsContext";
+import { Analytics } from "@vercel/analytics/react"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +38,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <GoogleAnalytics gaId="G-4FTCBNT9JK" />
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
