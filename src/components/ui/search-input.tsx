@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect } from "react";
 import { Input } from "./input";
 import { Search } from "lucide-react";
 
@@ -6,11 +6,20 @@ interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
 }
 
+
 const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
   ({ placeholder = "Search...", ...props }, ref) => {
+
+    useEffect(() => {
+      if (ref && typeof ref !== "function" && ref.current) {
+        ref.current.focus(); // Manually focus the input on mount
+      }
+    }, [ref]);
+
+
     return (
-      <div className="relative flex items-center rounded" aria-hidden="false">
-        <Search className="absolute left-2 h-6 w-6 p-1 text-gray-500 dark:text-gray-400 pointer-events-none" />
+      <div className="relative flex items-center rounded">
+        <Search className="absolute left-2 h-6 w-6 p-1 text-gray-500 dark:text-gray-400" />
         <Input
           type="search"
           className="pl-8 pr-12 py-1 flex-1 z-10"
@@ -18,7 +27,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
           ref={ref}
           {...props}
         />
-        <kbd className="absolute right-2 h-5 border p-1 flex items-center gap-1 rounded font-mono text-[10px] font-medium text-muted-foreground pointer-events-none">
+        <kbd className="absolute right-2 h-5 border p-1 flex items-center gap-1 rounded font-mono text-[10px] font-medium text-muted-foreground">
           <span className="text-xs">⌘</span>K
         </kbd>
       </div>
