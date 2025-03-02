@@ -6,7 +6,6 @@ import { Sidebar } from "./components/layout/sidebar";
 import { FooterBar } from "./components/layout/footer-bar";
 import { ThemeProvider } from "./components/layout/theme-provider";
 import { SidebarProvider } from "./context/sidebarContext";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { SubmitButton } from "@/components/ui/submit-button";
 import { NotificationProvider } from "./context/notificationsContext";
 import { Analytics } from "@vercel/analytics/react"
