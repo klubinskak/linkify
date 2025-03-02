@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import React, { useEffect, useState, useRef } from "react";
 import { DialogFooter, DialogHeader } from "@/components/ui/dialog";
 import {
@@ -68,13 +67,6 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   }, [query, data]);
 
   return (
-    <div
-      ref={portalRef}
-      className={clsx(
-        "fixed flex z-50 justify-center items-center inset-0 bg-black bg-opacity-30 backdrop-blur-sm",
-        className
-      )}
-    >
       <Dialog open={isOpen} onOpenChange={onClose}>
         {portalRef.current && (
           <DialogPortal container={portalRef.current}>
@@ -131,6 +123,5 @@ export const SearchModal: React.FC<SearchModalProps> = ({
           </DialogPortal>
         )}
       </Dialog>
-    </div>
   );
 };

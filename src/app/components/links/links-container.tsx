@@ -66,7 +66,7 @@ const LinksContainer = () => {
   }
 
   return (
-    <div>
+    <div className="p-4">
       <SearchInput
         placeholder="Search.."
         onFocus={() => showModal()}
@@ -75,7 +75,6 @@ const LinksContainer = () => {
           setQuery(e.currentTarget.value)
         }
       ></SearchInput>
-      <Input placeholder="Search.." />
       {showSearchModal && (
         <SearchModal
           className="hidden md:flex"

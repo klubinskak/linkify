@@ -1,28 +1,19 @@
-import React, { forwardRef, useEffect } from "react";
-import { Input } from "./input";
-import { Search } from "lucide-react";
+import React, { forwardRef } from 'react';
+import { Input } from './input';
+import { Search } from 'lucide-react';
 
 interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
 }
 
-
 const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
   ({ placeholder = "Search...", ...props }, ref) => {
-
-    useEffect(() => {
-      if (ref && typeof ref !== "function" && ref.current) {
-        ref.current.focus(); // Manually focus the input on mount
-      }
-    }, [ref]);
-
-
     return (
       <div className="relative flex items-center rounded">
         <Search className="absolute left-2 h-6 w-6 p-1 text-gray-500 dark:text-gray-400" />
         <Input
           type="search"
-          className="pl-8 pr-12 py-1 flex-1 z-10"
+          className="pl-8 pr-12 py-1 flex-1 z-10 relative" // Added z-index and relative positioning here
           placeholder={placeholder}
           ref={ref}
           {...props}
