@@ -56,7 +56,7 @@ export default function LinksGrid({
   }, [links]);
 
   return (
-    <div>
+    <div className="p-4 md:p-0">
       <Breadcrumbs
         items={[
           { label: formatLabel(params.topic), href: `/${params.topic}` },
@@ -66,7 +66,7 @@ export default function LinksGrid({
           },
         ]}
       />
-      <h1 className="text-xl p-3">{formatLabel(params.subtopic)}</h1>
+      <h1 className="text-xl p-3 mt-2">{formatLabel(params.subtopic)}</h1>
       {!loading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-y-4 gap-x-4 p-3">
           {linksWithMetadata?.map((link) => (

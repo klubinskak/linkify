@@ -81,7 +81,7 @@ export default function RootLayout({
                     <SubmitButton />
                   </div>
                 </div>
-                <FooterBar className="fixed bottom-0 w-full block border border-top-2 md:hidden dark:bg-[#0A0A0A]" />
+                <FooterBar className="fixed bottom-0 w-full block border-t md:hidden dark:bg-[#0A0A0A]" />
               </div>
             </SidebarProvider>
           </NotificationProvider>

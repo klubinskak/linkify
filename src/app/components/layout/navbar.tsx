@@ -21,7 +21,7 @@ export function Navbar() {
 
   console.log(theme);
   return (
-    <header className="shadow p-5 md:p-2 border bottom-3">
+    <header className="shadow p-5 md:p-2 border-b">
       <div className="mx-2 flex items-center justify-center md:justify-between">
         <Link
           className="mx-12 text-lg font-bold mr-12 flex justify-center items-center"
