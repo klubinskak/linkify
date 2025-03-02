@@ -10,7 +10,6 @@ import React, { useEffect, useState } from "react";
 import { SearchModal } from "./search-modal";
 import SearchInput from "@/components/ui/search-input";
 import { LinksData } from "@/models/link";
-import { Input } from "@/components/ui/input";
 
 const LinksContainer = () => {
   const { closeModal } = useSidebar();

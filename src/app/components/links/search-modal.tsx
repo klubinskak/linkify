@@ -6,7 +6,6 @@ import {
   DialogDescription,
   DialogTitle,
   DialogClose,
-  DialogPortal, 
 } from "@radix-ui/react-dialog";
 import {
   Accordion,
@@ -39,21 +38,21 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState<LinksData[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
-  const portalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Filter results based on the search query
-    const filtered = data.filter((item) =>
-      item.title.toLowerCase().includes(query.toLowerCase()) ||
-      item.subtitles.join().toLowerCase().includes(query.toLowerCase())
+    const filtered = data.filter(
+      (item) =>
+        item.title.toLowerCase().includes(query.toLowerCase()) ||
+        item.subtitles.join().toLowerCase().includes(query.toLowerCase())
     );
     setFilteredData(filtered);
 
     const handleKeyDown = (event: KeyboardEvent) => {
       // Check for Command (or Ctrl) + K
       if ((event.metaKey || event.ctrlKey) && event.key === "k") {
-        event.preventDefault(); 
-        inputRef.current?.focus(); 
+        event.preventDefault();
+        inputRef.current?.focus();
       }
     };
 
@@ -67,61 +66,60 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   }, [query, data]);
 
   return (
-      <Dialog open={isOpen} onOpenChange={onClose}>
-        {portalRef.current && (
-          <DialogPortal container={portalRef.current}>
-            <DialogContent className="z-50 w-[50%] h-[30rem] p-4 bg-[#0A0A0A] border border-2 rounded-lg overflow-auto">
-              <DialogHeader>
-                <DialogTitle className="p-2">
-                  <div className="flex justify-between">
-                    Search
-                    <DialogClose asChild>
-                      <p className="text-white cursor-pointer">x</p>
-                    </DialogClose>
-                  </div>
-                </DialogTitle>
-                <SearchInput
-                  placeholder="Search.."
-                  ref={inputRef}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    setQuery(e.currentTarget.value)
-                  }
-                />
-                <DialogDescription className="text-xs text-gray-400 p-2">
-                  Results
-                </DialogDescription>
-              </DialogHeader>
-              <div className="flex flex-col">
-                <ul>
-                  {filteredData.map((link) => (
-                    <Accordion
-                      type="single"
-                      collapsible
-                      className="w-full"
-                      key={link.title}
-                    >
-                      <AccordionItem value={link.title}>
-                        <AccordionTrigger>{link.title}</AccordionTrigger>
-                        {link.subtitles.map((subtitle) => (
-                          <AccordionContent key={subtitle}>
-                            <Link
-                              className="mx-4 hover:text-gray-400"
-                              href={`/${link.title.toLowerCase()}/${subtitle.toLowerCase()}`}
-                              onClick={onClose}
-                            >
-                              {subtitle}
-                            </Link>
-                          </AccordionContent>
-                        ))}
-                      </AccordionItem>
-                    </Accordion>
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent
+        className={`z-50 w-[50%] h-[30rem] p-4 bg-[#0A0A0A] border border-2 rounded-lg overflow-auto ${className}`}
+      >
+        {" "}
+        <DialogHeader>
+          <DialogTitle className="p-2">
+            <div className="flex justify-between">
+              Search
+              <DialogClose asChild>
+                <p className="text-white cursor-pointer">x</p>
+              </DialogClose>
+            </div>
+          </DialogTitle>
+          <SearchInput
+            placeholder="Search.."
+            ref={inputRef}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setQuery(e.currentTarget.value)
+            }
+          />
+          <DialogDescription className="text-xs text-gray-400 p-2">
+            Results
+          </DialogDescription>
+        </DialogHeader>
+        <div className="flex flex-col">
+          <ul>
+            {filteredData.map((link) => (
+              <Accordion
+                type="single"
+                collapsible
+                className="w-full"
+                key={link.title}
+              >
+                <AccordionItem value={link.title}>
+                  <AccordionTrigger>{link.title}</AccordionTrigger>
+                  {link.subtitles.map((subtitle) => (
+                    <AccordionContent key={subtitle}>
+                      <Link
+                        className="mx-4 hover:text-gray-400"
+                        href={`/${link.title.toLowerCase()}/${subtitle.toLowerCase()}`}
+                        onClick={onClose}
+                      >
+                        {subtitle}
+                      </Link>
+                    </AccordionContent>
                   ))}
-                </ul>
-              </div>
-              <DialogFooter className="sm:justify-start" />
-            </DialogContent>
-          </DialogPortal>
-        )}
-      </Dialog>
+                </AccordionItem>
+              </Accordion>
+            ))}
+          </ul>
+        </div>
+        <DialogFooter className="sm:justify-start" />
+      </DialogContent>
+    </Dialog>
   );
 };
