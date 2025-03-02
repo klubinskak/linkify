@@ -6,7 +6,6 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
@@ -34,12 +33,8 @@ export function Sidebar({ className }: { className?: string }) {
         <DrawerContent>
           <DrawerHeader>
             <div className="flex justify-between p-2">
-              <div></div>
               <div>
-                <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-                <DrawerDescription>
-                  This action cannot be undone.
-                </DrawerDescription>
+                <DrawerTitle>Search</DrawerTitle>
               </div>
               <DrawerClose onClick={() => closeModal()}>X</DrawerClose>
             </div>

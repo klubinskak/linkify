@@ -49,9 +49,6 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 
     setFilteredData(filteredData);
 
-    console.log('??', filteredData);
-
-
     const handleKeyDown = (event: KeyboardEvent) => {
         // Check for Command (or Ctrl) + K
         if ((event.metaKey || event.ctrlKey) && event.key === "k") {

@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
-import { Input } from "@/components/ui/input";
-import { Search } from 'lucide-react';
+import { Input } from "./input";
+import { Search } from "lucide-react";
 
 interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
@@ -13,7 +13,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         <Search className="absolute left-2 h-6 w-6 p-1 text-gray-500 dark:text-gray-400" />
         <Input
           type="search"
-          className="pl-8 pr-12 py-1 flex-1"
+          className="pl-8 pr-12 py-1 flex-1 z-10"
           placeholder={placeholder}
           ref={ref}
           {...props}
