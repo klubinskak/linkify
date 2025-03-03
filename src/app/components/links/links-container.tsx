@@ -15,9 +15,6 @@ const LinksContainer = () => {
   const { closeModal } = useSidebar();
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [linksData, setLinksData] = useState<LinksData[] | null>(null);
-  const [filteredData, setFilteredData] = useState<LinksData[]>([]);
-  const [query, setQuery] = useState("");
-  const inputRef = React.useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,32 +27,6 @@ const LinksContainer = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const filteredData = linksData?.filter(
-      (item) =>
-        item.title.toLowerCase().includes(query.toLowerCase()) ||
-        item.subtitles.join().toLowerCase().includes(query.toLowerCase())
-    );
-
-    setFilteredData(filteredData || []);
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      // Check for Command (or Ctrl) + K
-      if ((event.metaKey || event.ctrlKey) && event.key === "k") {
-        event.preventDefault(); // Prevent default browser behavior
-        inputRef.current?.focus(); // Focus the input field
-      }
-    };
-
-    // Add event listener to the document
-    document.addEventListener("keydown", handleKeyDown);
-
-    // Cleanup event listener on unmount
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [query, linksData]);
-
   const showModal = () => {
     setShowSearchModal(true);
   };
@@ -65,14 +36,10 @@ const LinksContainer = () => {
   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 md:p-0">
       <SearchInput
         placeholder="Search.."
         onFocus={() => showModal()}
-        ref={inputRef}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setQuery(e.currentTarget.value)
-        }
       ></SearchInput>
       {showSearchModal && (
         <SearchModal
@@ -84,7 +51,7 @@ const LinksContainer = () => {
       )}
       <ul className="pt-4 md: pt-0">
         <li>
-          {filteredData.map((link) => (
+          {linksData.map((link) => (
             <Accordion
               type="single"
               collapsible
