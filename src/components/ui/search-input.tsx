@@ -8,12 +8,14 @@ interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
   ({ placeholder = "Search...", ...props }, ref) => {
+    console.log(props);
+
     return (
       <div className="relative flex items-center rounded">
         <Search className="absolute left-2 h-6 w-6 p-1 text-gray-500 dark:text-gray-400 pointer-events-none" />
         <Input
           type="search"
-          className="pl-10 pr-12 py-1 flex-1"
+          className="pl-10 pr-12 py-1 flex-1 appearance-none"
           placeholder={placeholder}
           ref={ref}
           {...props}
