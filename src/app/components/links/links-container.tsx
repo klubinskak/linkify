@@ -40,8 +40,9 @@ const LinksContainer = () => {
             item.title.toLowerCase().includes(query.toLowerCase()) ||
             item.subtitles.join().toLowerCase().includes(query.toLowerCase())
         )
+        .sort((a, b) => a.title.localeCompare(b.title))
       : [];
-
+      
     setFilteredData(filteredData);
 
     const handleKeyDown = (event: KeyboardEvent) => {

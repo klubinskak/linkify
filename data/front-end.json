@@ -2,7 +2,7 @@
     "topic": "Front-end",
     "subtopics": [
       {
-        "name": "UI Libraries",
+        "name": "React UI Libraries",
         "links": [
           {
             "title": "MagicUI",
@@ -22,6 +22,21 @@
           {
             "title": "ReactBits", 
             "url": "https://www.reactbits.dev/",
+            "tags": ["Free"]
+          },
+          {
+            "title": "Getjustd",
+            "url": "getjustd.com",
+            "tags": ["Free"]
+          }
+        ]
+      },
+      {
+        "name": "React Libraries",
+        "links": [
+          {
+            "title": "Reacthaiku",
+            "url": "https://www.reacthaiku.dev/",
             "tags": ["Free"]
           }
         ]

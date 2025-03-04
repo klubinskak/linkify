@@ -18,6 +18,11 @@
               "title": "React Kawaii",
               "url": "https://react-kawaii.vercel.app/",
               "tags": ["Free"]
+          },
+          {
+            "title": "CSS Shape",
+            "url": "https://css-shape.com/",
+            "tags": ["Free"]
           }
         ]
       },
@@ -62,6 +67,11 @@
           {
             "title":"Photogradient.com",
             "url": "https://photogradient.com/",
+            "tags": ["Free"]
+          }, 
+          {
+            "title": "Meshgradient",
+            "url": "https://meshgradient.com/",
             "tags": ["Free"]
           }
         ]
@@ -112,6 +122,26 @@
           {
             "title": "Dribble",
             "url": "https://dribbble.com/",
+            "tags": ["Free"]
+          },
+          {
+            "title": "A1.gallery",
+            "url": "https://www.a1.gallery/",
+            "tags": ["Free"]
+          }
+        ]
+      },
+      {
+        "name": "Colors",
+        "links": [
+          {
+            "title": "Huemint",
+            "url": "https://huemint.com/",
+            "tags": ["Free"]
+          },
+          {
+            "title": "Color Hunt",
+            "url": "https://colorhunt.co/",
             "tags": ["Free"]
           }
         ]

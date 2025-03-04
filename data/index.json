@@ -6,7 +6,7 @@
     },
     {
       "title": "Design",
-      "subtitles": ["Illustrations",  "Icons", "Backgrounds", "Logos", "Coding", "Inspirations", "Fonts"],
+      "subtitles": ["Illustrations",  "Icons", "Backgrounds", "Logos", "Coding", "Inspirations", "Fonts", "Colors"],
       "source": "design.json"
     },
     {
@@ -31,7 +31,7 @@
     },
     {
       "title": "Front-end",
-      "subtitles": ["UI Libraries"],
+      "subtitles": ["React UI Libraries", "React Libraries"],
       "source": "front-end.json"
     },
     {
@@ -43,5 +43,10 @@
       "title": "Content Creation",
       "subtitles": ["Graphics"],
       "source": "content-creation.json"
+    },
+    {
+      "title": "Apps Development",
+      "subtitles": ["Packages"],
+      "source": "apps-development.json"
     }
   ]
