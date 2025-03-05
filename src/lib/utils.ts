@@ -5,14 +5,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-function capitalizeSecondPhrase(input: string) {
-  const words = input.split(" ");
-  if (words.length === 2) {
-    words[1] = words[1].charAt(0).toUpperCase() + words[1].slice(1);
-  }
-  return words.join(" ");
-}
-
 export function formatLabel(topic: string): string {
   let formattedLabel: string = topic;
 
