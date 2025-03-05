@@ -15,17 +15,21 @@ function capitalizeSecondPhrase(input: string) {
 
 export function formatLabel(topic: string): string {
   let formattedLabel: string = topic;
-  if(topic === "ai"){
-    formattedLabel = formattedLabel.toUpperCase()
-  }
-  if(topic.includes('%20')){
-    formattedLabel = formattedLabel.replace('%20', ' ');
-    formattedLabel = capitalizeSecondPhrase(formattedLabel);
+
+  if (topic === "ai") {
+    formattedLabel = formattedLabel.toUpperCase();
   }
 
-  if(topic.includes('ui')){
-    formattedLabel = formattedLabel.replace('ui', 'UI ');
+  if (topic.includes("%20")) {
+    formattedLabel = formattedLabel.replace(/%20/g, " ");
   }
 
-  return formattedLabel.charAt(0).toUpperCase() + formattedLabel.slice(1)
+  formattedLabel = formattedLabel.replace(/\bui\b/gi, "UI");
+
+  formattedLabel = formattedLabel
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  return formattedLabel;
 }

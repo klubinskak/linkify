@@ -48,5 +48,10 @@
       "title": "Apps Development",
       "subtitles": ["Packages"],
       "source": "apps-development.json"
+    },
+    {
+      "title": "Pluralsight Training",
+      "subtitles": ["Angular Training", "React Training", "Vue Training"],
+      "source": "pluralsight-training.json"
     }
   ]

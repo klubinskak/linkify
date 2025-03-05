@@ -43,9 +43,14 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   
   useEffect(() => {
     // Filter results based on the search query
-    const filteredData = data.filter((item) =>
-      item.title.toLowerCase().includes(query.toLowerCase()) || item.subtitles.join().toLowerCase().includes(query.toLowerCase())
-    );
+    const filteredData = data
+      ? data.filter(
+          (item) =>
+            item.title.toLowerCase().includes(query.toLowerCase()) ||
+            item.subtitles.join().toLowerCase().includes(query.toLowerCase())
+        )
+        .sort((a, b) => a.title.localeCompare(b.title))
+      : [];
 
     setFilteredData(filteredData);
 
