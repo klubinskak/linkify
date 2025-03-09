@@ -9,7 +9,6 @@ import { SidebarProvider } from "./context/sidebarContext";
 import { SubmitButton } from "@/components/ui/submit-button";
 import { NotificationProvider } from "./context/notificationsContext";
 import { Analytics } from "@vercel/analytics/react";
-import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
