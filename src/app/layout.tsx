@@ -8,7 +8,8 @@ import { ThemeProvider } from "./components/layout/theme-provider";
 import { SidebarProvider } from "./context/sidebarContext";
 import { SubmitButton } from "@/components/ui/submit-button";
 import { NotificationProvider } from "./context/notificationsContext";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,14 +29,14 @@ export const metadata: Metadata = {
     description: "A curated list of useful links",
     images: [
       {
-        url: "/linkify-img.png", 
+        url: "/linkify-img.png",
         width: 1200,
         height: 630,
         alt: "Linkify - A curated list of useful links",
       },
     ],
     type: "website",
-    url: "https://linkify.ovh", 
+    url: "https://linkify.ovh",
   },
 };
 
@@ -55,7 +56,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem = {false}
+          enableSystem={false}
           disableTransitionOnChange
         >
           <NotificationProvider>
