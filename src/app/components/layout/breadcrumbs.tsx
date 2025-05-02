@@ -8,6 +8,7 @@ import {
 import React from "react";
 
 function capitalizeFirstLetter(string: string) {
+  console.log('stirng?', string);
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 

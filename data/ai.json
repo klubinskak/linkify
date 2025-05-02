@@ -40,6 +40,16 @@
           "tags": ["Free", "Paid"]
         }
       ]
+    },
+    {
+      "name": "Development",
+      "links": [
+        {
+          "title": "Cursor AI",
+          "url": "https://www.cursor.com/",
+          "tags": ["Free", "Paid"]
+        }
+      ]
     }
   ]
 }

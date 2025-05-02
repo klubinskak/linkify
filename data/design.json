@@ -27,6 +27,21 @@
         ]
       },
       {
+        "name": "Websites",
+        "links": [
+          {
+            "title": "One Page Love",
+            "url": "https://onepagelove.com/",
+            "tags": ["Free"]
+          }, 
+          {
+            "title": "Dribble",
+            "url": "https://dribbble.com/",
+            "tags": ["Free"]
+          }
+        ]
+      },
+      {
         "name": "Icons",
         "links": [
             {
@@ -160,6 +175,26 @@
             "tags": ["Free"]
           }
         ]
+      },
+      {
+        "name": "Colors",
+        "links": [
+          {
+            "title": "Color Hunt",
+            "url": "https://colorhunt.co/",
+            "tags": ["Free"]
+          }
+        ] 
+      },
+      {
+        "name": "Avatars",
+        "links": [
+          {
+            "title": "Avatar AI",
+            "url": "https://avatar-ai-x.vercel.app/",
+            "tags": ["Free"]
+          }
+        ] 
       }
     ]
   }

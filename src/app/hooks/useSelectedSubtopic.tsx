@@ -3,22 +3,21 @@ import { useEffect, useState } from "react";
 
 function useSelectedSubtopic(topic: string, subtopic: string) {
   const [links, setLinks] = useState<LinkModel[] | null>(null);
-  if(topic.includes('%20')) {
-    topic = topic.replace('%20', '-')
-  };
-  if(subtopic.includes('%20')) {
-    subtopic = subtopic.replace('%20', ' ')
-  };
+  
+  // Normalize the topic for file path
+  const normalizedTopic = topic.toLowerCase().replace(/%20/g, '-');
+  
+  // Normalize the subtopic for comparison
+  const normalizedSubtopic = subtopic.toLowerCase().replace(/%20/g, ' ');
 
   useEffect(() => {
     const fetchSelectedSubtopicLinks = async () => {
       try {
-        const topicData: TopicData = await import(`../../../data/${topic}`)
+        const topicData: TopicData = await import(`../../../data/${normalizedTopic}.json`)
           .then((module) => module.default);
 
-
         const currentSubtopicLinks = topicData.subtopics.find(
-          (st) => st.name.toLowerCase() === subtopic.toLowerCase()
+          (st) => st.name.toLowerCase() === normalizedSubtopic
         )?.links;
 
         setLinks(currentSubtopicLinks || null);
@@ -31,7 +30,7 @@ function useSelectedSubtopic(topic: string, subtopic: string) {
     if (topic && subtopic) {
       fetchSelectedSubtopicLinks();
     }
-  }, [topic, subtopic, links]); // Ensure links are correctly set only when needed
+  }, [topic, subtopic, normalizedTopic, normalizedSubtopic]);
 
   return { links };
 }

@@ -5,23 +5,20 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function formatLabel(topic: string): string {
-  let formattedLabel: string = topic;
-
-  if (topic === "ai") {
-    formattedLabel = formattedLabel.toUpperCase();
+export function formatLabel(label: string): string {
+  console.log('label?', label)
+  let formattedLabel: string = label;
+  if(label === "ai"){
+    formattedLabel = formattedLabel.toUpperCase()
+  }
+  if(label.includes('%20')){
+    formattedLabel = formattedLabel.replace('%20', ' ');
+    formattedLabel = capitalizeSecondPhrase(formattedLabel);
   }
 
-  if (topic.includes("%20")) {
-    formattedLabel = formattedLabel.replace(/%20/g, " ");
+  if(label.includes('ui')){
+    formattedLabel = formattedLabel.replace('ui', 'UI ');
   }
 
-  formattedLabel = formattedLabel.replace(/\bui\b/gi, "UI");
-
-  formattedLabel = formattedLabel
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-
-  return formattedLabel;
+  return formattedLabel.charAt(0).toUpperCase() + formattedLabel.slice(1)
 }

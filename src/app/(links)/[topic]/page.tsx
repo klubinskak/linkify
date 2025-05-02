@@ -23,15 +23,13 @@ interface IndexModel {
 
 export default async function Page({ params }: { params: Promise<{ topic: string }> }) {
   const topic = (await params).topic;
-  let sanitazedTopic;
-  if(topic.includes('%20')){
-    sanitazedTopic = topic.replace('%20', '-').toLowerCase();
-  }
+  
+  // Normalize the topic for file path
+  const normalizedTopic = topic.toLowerCase().replace(/%20/g, '-');
 
   const topicData: TopicData = await import(
-            `../../../../data/${sanitazedTopic ? sanitazedTopic : topic.toLowerCase()}.json`
-          ).then((module) => module.default);
-  
+    `../../../../data/${normalizedTopic}.json`
+  ).then((module) => module.default);
 
   return (
     <div className="h-[screen] p-4 md:p-0 overflow-auto flex flex-col">
@@ -41,7 +39,7 @@ export default async function Page({ params }: { params: Promise<{ topic: string
         <div className="h-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-4 gap-x-4 p-3">
           {topicData.subtopics.map((st) => (
             <Link
-              href={`/${topic}/${st.name}`}
+              href={`/${topic}/${st.name.replace(/ /g, '%20')}`}
               key={st.name}
             >
               <Card className="w-full h-24">

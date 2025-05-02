@@ -2,56 +2,111 @@
     {
       "title": "Podcasts",
       "subtitles": ["Tech", "Programming", "Science"],
-      "source": "podcasts.json"
+      "source": "podcasts.json",
+      "icon": {
+        "name": "Headphones",
+        "size": "w-5 h-5",
+        "color": "text-gray-200"
+      }
     },
     {
       "title": "Design",
-      "subtitles": ["Illustrations",  "Icons", "Backgrounds", "Logos", "Coding", "Inspirations", "Fonts", "Colors", "Avatars"],
-      "source": "design.json"
+      "subtitles": ["Illustrations",  "Icons", "Backgrounds", "Logos", "Coding", "Inspirations", "Fonts", "Colors", "Avatars", "Websites"],
+      "source": "design.json",
+      "icon": {
+        "name": "Palette",
+        "size": "w-5 h-5",
+        "color": "text-gray-200"
+      }
     },
     {
       "title": "Programming Languages",
       "subtitles": ["Typescript", "C Sharp"],
-      "source": "programming-languages.json"
+      "source": "programming-languages.json",
+      "icon": {
+        "name": "Code2",
+        "size": "w-5 h-5",
+        "color": "text-gray-200"
+      }
     },
     {
       "title": "Languages",
       "subtitles": ["English", "Spanish", "French", "Tools"],
-      "source": "languages.json"
+      "source": "languages.json",
+      "icon": {
+        "name": "Languages",
+        "size": "w-5 h-5",
+        "color": "text-gray-200"
+      }
     },
     {
       "title": "Frameworks",
       "subtitles": ["React", "Angular"],
-      "source": "frameworks.json"
+      "source": "frameworks.json",
+      "icon": {
+        "name": "Layout",
+        "size": "w-5 h-5",
+        "color": "text-gray-200"
+      }
     },
     {
       "title": "AI",
-      "subtitles": ["Images", "Chatbots", "Videos"],
-      "source": "ai.json"
+      "subtitles": ["Images", "Chatbots", "Development"],
+      "source": "ai.json",
+      "icon": {
+        "name": "Bot",
+        "size": "w-5 h-5",
+        "color": "text-gray-200"
+      }
     },
     {
       "title": "Front-end",
-      "subtitles": ["React UI Libraries", "React Libraries"],
-      "source": "front-end.json"
+      "subtitles": ["React UI Libraries", "CSS Frameworks", "Animation", "Development Tools", "Design Tools"],
+      "source": "front-end.json",
+      "icon": {
+        "name": "Layout",
+        "size": "w-5 h-5",
+        "color": "text-gray-200"
+      }
     },
     {
       "title": "News",
       "subtitles": ["Tech", "World", "Business"],
-      "source": "news.json"
+      "source": "news.json",
+      "icon": {
+        "name": "Newspaper",
+        "size": "w-5 h-5",
+        "color": "text-gray-200"
+      }
     },
     {
       "title": "Content Creation",
       "subtitles": ["Graphics"],
-      "source": "content-creation.json"
+      "source": "content-creation.json",
+      "icon": {
+        "name": "PenTool",
+        "size": "w-5 h-5",
+        "color": "text-gray-200"
+      }
     },
     {
       "title": "Apps Development",
-      "subtitles": ["Packages"],
-      "source": "apps-development.json"
+      "subtitles": ["Packages", "Tools", "Testing"],
+      "source": "apps-development.json",
+      "icon": {
+        "name": "AppWindow",
+        "size": "w-5 h-5",
+        "color": "text-gray-200"
+      }
     },
     {
       "title": "Pluralsight Training",
       "subtitles": ["Angular Training", "React Training", "Vue Training"],
-      "source": "pluralsight-training.json"
+      "source": "pluralsight-training.json",
+      "icon": {
+        "name": "GraduationCap",
+        "size": "w-5 h-5",
+        "color": "text-gray-200"
+      }
     }
   ]

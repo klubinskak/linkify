@@ -30,8 +30,6 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const url = searchParams.get('url');
 
-    console.log('URL:', url);
-
     const isValidUrl = (url: string) => {
       try {
         new URL(url);

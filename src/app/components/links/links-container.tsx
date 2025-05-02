@@ -1,3 +1,5 @@
+"use client";
+
 import { useSidebar } from "@/app/context/sidebarContext";
 import {
   Accordion,
@@ -11,6 +13,8 @@ import { SearchModal } from "./search-modal";
 import SearchInput from "@/components/ui/search-input";
 import { LinksData } from "@/models/link";
 import { useMediaQuery } from "react-responsive";
+import { Icon } from "@/components/ui/icon";
+import LoadingSpinner from "../layout/loading-spinner";
 
 const LinksContainer = () => {
   const { closeModal } = useSidebar();
@@ -18,45 +22,43 @@ const LinksContainer = () => {
   const [linksData, setLinksData] = useState<LinksData[] | null>(null);
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState<LinksData[]>([]);
+  const [query, setQuery] = useState("");
   const isMediumOrLarger = useMediaQuery({ query: "(min-width: 768px)" });
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data: LinksData[] = await import(
-        `../../../../data/index.json`
-      ).then((module) => module.default);
-      setLinksData(data);
+      try {
+        const timestamp = new Date().getTime();
+        const data = (await import(`../../../../data/index.json?update=${timestamp}`)).default as LinksData[];
+        setLinksData(data);
+        setFilteredData(data);
+      } catch (error) {
+        console.error('Error loading data:', error);
+      }
     };
-
     fetchData();
   }, []);
 
   useEffect(() => {
-    // Filter results based on the search query
-    const filteredData = linksData
-      ? linksData.filter(
-          (item) =>
-            item.title.toLowerCase().includes(query.toLowerCase()) ||
-            item.subtitles.join().toLowerCase().includes(query.toLowerCase())
-        )
-        .sort((a, b) => a.title.localeCompare(b.title))
-      : [];
-      
-    setFilteredData(filteredData);
+    if (!linksData) return;
+    
+    const filtered = linksData.filter((link) =>
+      link.title.toLowerCase().includes(query.toLowerCase()) ||
+      link.subtitles.some((subtitle) =>
+        subtitle.toLowerCase().includes(query.toLowerCase())
+      )
+    );
+    setFilteredData(filtered);
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      // Check for Command (or Ctrl) + K
       if ((event.metaKey || event.ctrlKey) && event.key === "k") {
-        event.preventDefault(); // Prevent default browser behavior
-        inputRef.current?.focus(); // Focus the input field
+        event.preventDefault();
+        inputRef.current?.focus();
       }
     };
 
-    // Add event listener to the document
     document.addEventListener("keydown", handleKeyDown);
-
-    // Cleanup event listener on unmount
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
@@ -67,7 +69,11 @@ const LinksContainer = () => {
   };
 
   if (!linksData) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center items-center min-h-[200px]">
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   return (
@@ -78,8 +84,8 @@ const LinksContainer = () => {
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setQuery(e.currentTarget.value)
         }
-        onFocus={isMediumOrLarger ? () => showModal() : undefined}
-      ></SearchInput>
+        onFocus={isMediumOrLarger ? showModal : undefined}
+      />
       {showSearchModal && (
         <SearchModal
           className="hidden md:flex"
@@ -88,31 +94,42 @@ const LinksContainer = () => {
           data={linksData}
         />
       )}
-      <ul className="pt-4 md: pt-0">
+      <ul className="pt-4 md:pt-0">
         <li>
-          {filteredData.map((link) => (
-            <Accordion
-              type="single"
-              collapsible
-              className="w-full"
-              key={link.title}
-            >
-              <AccordionItem value={link.title} key={link.title}>
-                <AccordionTrigger>{link.title}</AccordionTrigger>
-                {link.subtitles.map((subtitle) => (
-                  <AccordionContent key={subtitle}>
-                    <Link
-                      className="mx-4 hover:text-gray-400"
-                      href={`/${link.title.toLocaleLowerCase()}/${subtitle.toLocaleLowerCase()}`}
-                      onClick={() => closeModal()}
-                    >
-                      {subtitle}
-                    </Link>
-                  </AccordionContent>
-                ))}
-              </AccordionItem>
-            </Accordion>
-          ))}
+          {filteredData.map((link) => {
+            return (
+              <Accordion
+                type="single"
+                collapsible
+                className="w-full"
+                key={link.title}
+              >
+                <AccordionItem value={link.title} key={link.title}>
+                  <AccordionTrigger className="text-gray-200 hover:text-white">
+                    <div className="flex items-center gap-2">
+                      {link.icon ? (
+                        <Icon icon={link.icon} />
+                      ) : (
+                        <Icon />
+                      )}
+                      {link.title}
+                    </div>
+                  </AccordionTrigger>
+                  {link.subtitles.map((subtitle) => (
+                    <AccordionContent key={subtitle}>
+                      <Link
+                        className="mx-4 hover:text-gray-400"
+                        href={`/${link.title.toLocaleLowerCase()}/${encodeURIComponent(subtitle).toLowerCase()}`}
+                        onClick={() => closeModal()}
+                      >
+                        {subtitle}
+                      </Link>
+                    </AccordionContent>
+                  ))}
+                </AccordionItem>
+              </Accordion>
+            );
+          })}
         </li>
       </ul>
     </div>

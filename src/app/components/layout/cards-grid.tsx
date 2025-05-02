@@ -35,8 +35,6 @@ const CardsGrid: React.FC<CardsGridProps> = ({ totalLinks }) => {
         setLinkWithMetadata(data.urlWithMetadata);
       } catch (err) {
         console.error("Error fetching metadata:", err);
-      } finally {
-        console.log("Metadata fetched successfully");
       }
     }
 
@@ -102,7 +100,7 @@ const CardsGrid: React.FC<CardsGridProps> = ({ totalLinks }) => {
       </Link>
 
       {/* Second Card */}
-      <div className="opacity-70 hover:opacity-100 relative group w-full border border-white/10 flex justify-center items-center flex-col rounded-2xl h-64 md:h-52 bg-gradient-to-br from-gray-500/5 via-transparent to-transparent p-4 backdrop-blur-sm transition-all shadow-lg">
+      <div className="opacity-70 hover:opacity-100 relative group w-full border border-white/10 flex justify-center items-center flex-col rounded-2xl h-64 md:h-52 bg-gradient-to-br from-gray-500/5 via-transparent to-transparent p-4 backdrop-blur-sm transition-all shadow-lg max-w-40 max-h-40">
         <img
           src="/grid white 1.png"
           alt="grid"

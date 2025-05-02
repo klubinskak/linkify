@@ -9,6 +9,7 @@ import { SidebarProvider } from "./context/sidebarContext";
 import { SubmitButton } from "@/components/ui/submit-button";
 import { NotificationProvider } from "./context/notificationsContext";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,11 +22,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Linkify - A curated list of useful links",
-  description: "A curated list of useful links",
+  title: "Linkify - A Curated Collection of Useful Links and Resources",
+  description: "Discover and share valuable web resources. Linkify is a curated platform for useful links, tools, and resources across various categories including development, design, and productivity.",
+  keywords: ["useful links", "web resources", "development tools", "design resources", "productivity tools", "curated links"],
+  authors: [{ name: "klaudiadev" }],
+  creator: "klaudiadev",
+  publisher: "klaudiadev",
   openGraph: {
-    title: "Linkify - A curated list of useful links",
-    description: "A curated list of useful links",
+    title: "Linkify - A Curated Collection of Useful Links and Resources",
+    description: "Discover and share valuable web resources. Linkify is a curated platform for useful links, tools, and resources across various categories.",
     images: [
       {
         url: "/linkify-img.png",
@@ -36,6 +41,28 @@ export const metadata: Metadata = {
     ],
     type: "website",
     url: "https://linkify.ovh",
+    siteName: "Linkify",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Linkify - A Curated Collection of Useful Links",
+    description: "Discover and share valuable web resources. A curated platform for useful links and tools.",
+    images: ["/linkify-img.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: "google-site-verification=q7JvlpnOVcGgW-8FcsUs8CL8k_OaR5C5X7ePmti0Ub0", 
   },
 };
 
@@ -48,6 +75,28 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Linkify",
+              "description": "A curated collection of useful links and resources",
+              "url": "https://linkify.ovh",
+              "applicationCategory": "ReferenceApplication",
+              "operatingSystem": "Any",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            })
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -67,7 +116,7 @@ export default function RootLayout({
                   {/* Sidebar and Main Content Wrapper */}
                   <div className="flex flex-1">
                     {/* Sidebar */}
-                    <Sidebar className="block w-60 h-full md:block p-4 border border-right-2 flex-shrink-0" />
+                    <Sidebar className="block min-w-120 h-full md:block p-4 border border-right-2 flex-shrink-0" />
 
                     {/* Main Content */}
                     <main className="w-full flex flex-col">
