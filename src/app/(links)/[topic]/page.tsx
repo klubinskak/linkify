@@ -2,12 +2,14 @@ import Breadcrumbs from "@/app/components/layout/breadcrumbs";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { TopicData } from "@/models/link";
 import Link from "next/link";
+import { promises as fs } from 'fs';
+import path from 'path';
 
 export async function generateStaticParams() {
-  // Fetch or define the list of topics
-  const indexData: IndexModel[] = await import(
-    `../../../../data/index.json`
-  ).then((module) => module.default);
+  // Read the index data from the public directory
+  const indexData: IndexModel[] = JSON.parse(
+    await fs.readFile(path.join(process.cwd(), 'public/data/index.json'), 'utf8')
+  );
 
   // Map topics to params
   return indexData.map((item) => ({
@@ -33,9 +35,10 @@ export default async function Page({ params }: { params: Promise<{ topic: string
     .replace(/-+/g, '-');     // Replace multiple hyphens with single hyphen
 
   try {
-    const topicData: TopicData = await import(
-      `../../../../data/${normalizedTopic}.json`
-    ).then((module) => module.default);
+    // Read the topic data from the public directory
+    const topicData: TopicData = JSON.parse(
+      await fs.readFile(path.join(process.cwd(), `public/data/${normalizedTopic}.json`), 'utf8')
+    );
 
     return (
       <div className="h-[screen] p-4 md:p-0 overflow-auto flex flex-col">

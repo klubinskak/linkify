@@ -20,8 +20,11 @@ function useSelectedSubtopic(topic: string, subtopic: string) {
   useEffect(() => {
     const fetchSelectedSubtopicLinks = async () => {
       try {
-        const topicData: TopicData = await import(`../../../data/${normalizedTopic}.json`)
-          .then((module) => module.default);
+        const response = await fetch(`/data/${normalizedTopic}.json`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch topic data');
+        }
+        const topicData: TopicData = await response.json();
 
         const currentSubtopicLinks = topicData.subtopics.find(
           (st) => st.name.toLowerCase() === normalizedSubtopic

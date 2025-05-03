@@ -1,10 +1,17 @@
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { createWriteStream } = require('fs');
-const { Readable } = require('stream');
-const indexData = require('../data/index.json');
+const { promises: fs } = require('fs');
+const path = require('path');
 
 async function generateSitemap() {
   try {
+    // Read the index data from the public directory
+    const indexData = JSON.parse(
+      await fs.readFile(path.join(process.cwd(), 'public/data/index.json'), 'utf8')
+    );
+
+    // Create a stream to write to
+    const stream = new SitemapStream({ hostname: 'https://linkify.ovh' });
     const links = [];
     
     // Add static pages
@@ -36,9 +43,6 @@ async function generateSitemap() {
       });
     });
 
-    // Create sitemap
-    const stream = new SitemapStream({ hostname: 'https://linkify.ovh' });
-    
     // Write our links to the stream
     links.forEach(link => stream.write(link));
     stream.end();

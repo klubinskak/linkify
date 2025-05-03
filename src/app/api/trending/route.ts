@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import indexData from '../../../../data/index.json';
+import { promises as fs } from 'fs';
+import path from 'path';
 
 interface TrendingTool {
   title: string;
@@ -22,20 +23,28 @@ interface CategoryData {
   subtopics: SubtopicData[];
 }
 
+interface IndexData {
+  title: string;
+  source: string;
+  subtitles: string[];
+}
+
 export async function GET() {
   try {
+    // Read the index data from the public directory
+    const indexData: IndexData[] = JSON.parse(
+      await fs.readFile(path.join(process.cwd(), 'public/data/index.json'), 'utf8')
+    );
+
     // Get all tools from different categories
     const allTools: TrendingTool[] = [];
     
     for (const category of indexData) {
       try {
-        // Use more robust import path
-        const categoryData = await import(`../../../../data/${category.source}`)
-          .then(module => module.default as CategoryData)
-          .catch(error => {
-            console.error(`Failed to load category ${category.title}:`, error);
-            return { subtopics: [] };
-          });
+        // Read the category data from the public directory
+        const categoryData: CategoryData = JSON.parse(
+          await fs.readFile(path.join(process.cwd(), `public/data/${category.source}`), 'utf8')
+        );
 
         if (!categoryData.subtopics || !Array.isArray(categoryData.subtopics)) {
           console.error(`Invalid data structure for category ${category.title}`);
