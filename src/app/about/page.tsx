@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { Github, Instagram, Twitter } from "lucide-react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -32,7 +31,7 @@ const About = () => {
             <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <p className="text-lg mb-6 text-gray-200 relative">
-                Hi there! I'm{" "}
+                Hi there! I&apos;m{" "}
                 <a
                   href="https://klubinska.dev"
                   target="_blank"
@@ -45,7 +44,7 @@ const About = () => {
                 , a Software Developer from Poland 🇵🇱
               </p>
               <p className="text-gray-400 mb-6 relative">
-                I'm passionate about creating beautiful and functional web applications that make a difference.
+                I&apos;m passionate about creating beautiful and functional web applications that make a difference.
               </p>
             </div>
           </div>
@@ -62,7 +61,7 @@ const About = () => {
           <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <p className="text-gray-300 relative">
-              I've been sharing useful resources, such as websites, on my Threads profile and wanted to create a hub where I can easily organize them and share them with everyone :)
+              I&apos;ve been sharing useful resources, such as websites, on my Threads profile and wanted to create a hub where I can easily organize them and share them with everyone :)
             </p>
           </div>
         </motion.div>

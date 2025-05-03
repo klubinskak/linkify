@@ -6,7 +6,6 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatLabel(label: string): string {
-  console.log('label?', label)
   let formattedLabel: string = label;
   if(label === "ai"){
     formattedLabel = formattedLabel.toUpperCase()

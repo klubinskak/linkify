@@ -8,7 +8,6 @@ import Notification from "./notification";
 import { motion } from "framer-motion";
 import { TrendingUp, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Slide2 } from "../ui/slides/slide2";
 
 interface HomeClientProps {
   totalLinks: number;
@@ -43,7 +42,7 @@ export function HomeClient({ totalLinks }: HomeClientProps) {
 
   const slides = [
     { component: <Slide1 image={"/slide1-bg.png"} /> },
-    //{ component: <Slide2 image={"/slide-bg-1.png"} /> },
+    //{ component: <Slide2 image={"/slide2-bg.png"} /> },
   ];
 
   return (

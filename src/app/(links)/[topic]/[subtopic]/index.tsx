@@ -5,6 +5,7 @@ import Breadcrumbs from "@/app/components/layout/breadcrumbs";
 import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import Image from "next/image";
 import { formatLabel } from "@/lib/utils";
 import { LinkModel } from "@/models/link";
 import LoadingSpinner from "@/app/components/layout/loading-spinner";
@@ -75,20 +76,20 @@ export default function LinksGrid({
                 <div className="w-full flex justify-center items-center">
                   <div className="rounded rounded-4 overflow-hidden w-full">
                     {link.metadata && link.metadata.image ? (
-                      /* eslint-disable @next/next/no-img-element */
-                      <img
+                      <Image
                         className="transform transition-transform duration-300 h-48 hover:scale-110 w-full object-cover"
                         src={link.metadata.image}
                         alt={link.title}
+                        width={500}
+                        height={300}
                       />
-                      /* eslint-enable @next/next/no-img-element */
                     ) : (
-                      <img
+                      <Image
                         className="transform transition-transform duration-300 h-48 hover:scale-110 w-full object-cover"
                         src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?v=1530129081"
                         alt="Placeholder"
-                        width={250}
-                        height={250}
+                        width={500}
+                        height={300}
                       />
                     )}
                   </div>
