@@ -1,43 +1,149 @@
+# Linkify
 
-![Web](https://github.com/user-attachments/assets/923cb41a-f6e0-4383-8228-83a372803cba)
+A modern, curated collection of useful links and resources for developers, designers, and tech enthusiasts. Built with Next.js 14, TypeScript, and Tailwind CSS.
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![Linkify Preview](public/linkify-img.png)
 
-## Getting Started
+## 🌟 Features
 
-First, run the development server:
+- 📚 Curated collections of resources across multiple categories
+- 🔍 Fast, real-time search functionality
+- 🎨 Beautiful, responsive UI with dark mode support
+- 🏷️ Tag-based filtering system
+- 🖼️ Rich previews for all links with metadata
+- ⌨️ Keyboard shortcuts for quick navigation
+- 📱 Mobile-friendly design
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: 
+  - [Radix UI](https://www.radix-ui.com/)
+  - [Shadcn/ui](https://ui.shadcn.com/)
+- **Metadata**: [RapidAPI Metafetch](https://rapidapi.com/metafetch)
+- **Icons**: [Lucide Icons](https://lucide.dev/)
+
+## 📦 Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/linkify.git
+   cd linkify
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. Set up environment variables:
+   ```bash
+   cp .env.example .env.local
+   ```
+   Fill in the required environment variables:
+   ```env
+   RAPIDAPI_KEY=your_rapidapi_key
+   RAPIDAPI_HOST=metafetch.p.rapidapi.com
+   GOOGLE_SHEET_ID=your_google_sheet_id
+   GOOGLE_SERVICE_ACCOUNT_JSON=your_service_account_json
+   ```
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🔧 Configuration
+
+### Adding New Resources
+
+Resources are stored in JSON files under `public/data/`. Each category has its own file:
+
+```typescript
+{
+  "topic": "Category Name",
+  "subtopics": [
+    {
+      "name": "Subtopic Name",
+      "links": [
+        {
+          "title": "Resource Title",
+          "url": "https://example.com",
+          "tags": ["Free", "Paid"]
+        }
+      ]
+    }
+  ]
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Image Optimization
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The project uses Next.js Image Optimization. Supported image domains are configured in `next.config.ts`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌈 Features in Detail
 
-## Learn More
+### Search Functionality
+- Real-time search across all categories
+- Keyboard shortcut (⌘/Ctrl + K) to focus search
+- Search in titles and descriptions
 
-To learn more about Next.js, take a look at the following resources:
+### Link Preview
+- Automatic metadata fetching
+- Image thumbnails
+- Description extraction
+- Responsive card layout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Categories
+- Development Tools
+- Design Resources
+- AI Tools
+- Learning Platforms
+- And more...
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contributing
 
-## Deploy on Vercel
+Contributions are welcome! Please follow these steps:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature/your-feature`
+3. Make your changes
+4. Commit your changes: `git commit -m 'Add some feature'`
+5. Push to the branch: `git push origin feature/your-feature`
+6. Submit a pull request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Credits
+
+Special thanks to:
+- [Next.js Team](https://nextjs.org/)
+- [Vercel](https://vercel.com/)
+- [Shadcn](https://twitter.com/shadcn)
+- All the amazing resource creators
+
+## 📞 Contact
+
+- Website: [linkify.ovh](https://linkify.ovh)
+- GitHub: [@klaudiadev](https://github.com/klaudiadev)
+
+---
+
+Made with ❤️ by Klaudia
 
 ## Creadits to 
 
