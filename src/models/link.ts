@@ -12,11 +12,12 @@ export  interface IconModel {
 
 export interface LinkModel {
     title: string;
+    description: string;
     url: string;
     image: string;
+    imageSource: string;
     tags?: string[];
 
-    metadata?: MetadataModel;
 }
 
 export interface MetadataModel {
@@ -47,4 +48,6 @@ export interface Link {
   url: string;
   tags?: string[];
   description?: string;
+  image?: string;
+  imageSource?: string;
 }

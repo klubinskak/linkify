@@ -19,7 +19,8 @@ const fetchCachedMetadata = unstable_cache(
     if (!response.ok) {
       throw new Error(`Failed to fetch metadata: ${response.statusText}`);
     }
-    return response.json();
+    const data = await response.json();
+    return data; // Return the raw data without transformation
   },
   ["metadata-cache"], // Base cache key
   {
@@ -59,14 +60,11 @@ export async function POST(request: Request) {
       );
     }
 
-    // Fetch using cached function
+    // Fetch using cached function and return the raw response
     const data = await fetchCachedMetadata(formattedLinks);
 
-    const linksWithMetadata = links.map((link, index) => ({
-      ...link,
-      ...data[index],
-    }));
-    return NextResponse.json({ linksWithMetadata });
+    // Return the exact format from RapidAPI without wrapping in linksWithMetadata
+    return NextResponse.json(data);
   } catch (error) {
     console.error("Error in API route:", error);
     return NextResponse.json(

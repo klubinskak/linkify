@@ -14,7 +14,43 @@ import SearchInput from "@/components/ui/search-input";
 import { LinksData } from "@/models/link";
 import { useMediaQuery } from "react-responsive";
 import { Icon } from "@/components/ui/icon";
-import LoadingSpinner from "../layout/loading-spinner";
+import { Skeleton } from "@/components/ui/skeleton";
+
+const SKELETON_ITEMS = 5;
+const SKELETON_SUBTITLES = 3;
+
+const AccordionSkeleton = () => (
+  <ul>
+    <li>
+      {Array.from({ length: SKELETON_ITEMS }).map((_, index) => (
+        <div 
+          key={index} 
+          className="border-b"
+        >
+          <div className="flex">
+            <div className="flex flex-1 items-center justify-between py-4 text-sm font-medium">
+              <div className="flex items-center gap-2">
+                <Skeleton className="h-4 w-4" /> {/* Icon skeleton */}
+                <Skeleton className="h-4 w-28" /> {/* Title skeleton */}
+              </div>
+              <Skeleton className="h-4 w-4 shrink-0 text-muted-foreground" /> {/* Chevron skeleton */}
+            </div>
+          </div>
+          {/* Subtitle skeletons - show for first item to simulate expanded state */}
+          <div className={index === 0 ? 'overflow-hidden text-sm animate-accordion-down' : 'hidden'}>
+            <div className="pb-4 pt-0">
+              {Array.from({ length: SKELETON_SUBTITLES }).map((_, subIndex) => (
+                <div key={subIndex} className="mx-4 py-1">
+                  <Skeleton className="h-4 w-24" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </li>
+  </ul>
+);
 
 const LinksContainer = () => {
   const { closeModal } = useSidebar();
@@ -71,14 +107,6 @@ const LinksContainer = () => {
     setShowSearchModal(true);
   };
 
-  if (!linksData) {
-    return (
-      <div className="flex justify-center items-center min-h-[200px]">
-        <LoadingSpinner />
-      </div>
-    );
-  }
-
   return (
     <div className="p-4 md:p-0">
       <SearchInput
@@ -94,13 +122,16 @@ const LinksContainer = () => {
           className="hidden md:flex"
           isOpen={showSearchModal}
           onClose={() => setShowSearchModal(false)}
-          data={linksData}
+          data={linksData || []}
         />
       )}
-      <ul className="pt-4 md:pt-0">
+      <div className="pt-4 md:pt-0">
+        {!linksData ? (
+          <AccordionSkeleton />
+        ) : (
+          <ul>
         <li>
-          {filteredData.map((link) => {
-            return (
+              {filteredData.map((link) => (
               <Accordion
                 type="single"
                 collapsible
@@ -131,10 +162,11 @@ const LinksContainer = () => {
                   ))}
                 </AccordionItem>
               </Accordion>
-            );
-          })}
+              ))}
         </li>
       </ul>
+        )}
+      </div>
     </div>
   );
 };

@@ -32,9 +32,14 @@ function useSelectedSubtopic(topic: string, subtopic: string) {
 
         // Transform Link[] to LinkModel[]
         const transformedLinks = currentSubtopicLinks?.map((link: Link) => ({
-          ...link,
-          image: "" // Add default empty image property
+          image: link.image || "",
+          title: link.title || "",
+          url: link.url || "",
+          tags: link.tags || [],
+          description: link.description || "",
+          imageSource: link.imageSource || "",
         })) || null;
+        
 
         setLinks(transformedLinks);
         
