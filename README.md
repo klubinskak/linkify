@@ -142,7 +142,6 @@ Special thanks to:
 ## 📞 Contact
 
 - Website: [linkify.ovh](https://linkify.ovh)
-- GitHub: [@klaudiadev](https://github.com/klaudiadev)
 
 ---
 
