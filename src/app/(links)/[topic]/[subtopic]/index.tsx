@@ -122,6 +122,7 @@ export default function LinksGrid({
           ))
         ) : (
           linksWithMetadata.map((link) => (
+            !link.error && (
             <Link href={link.url} key={link.url} target="_blank">
               <Card className="w-full h-[22rem]">
                 <div className="w-full flex justify-center items-center">
@@ -161,7 +162,7 @@ export default function LinksGrid({
                 </CardFooter>
               </Card>
             </Link>
-          ))
+          )))
         )}
         </div>
     </div>

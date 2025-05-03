@@ -17,6 +17,7 @@ export interface LinkModel {
     image: string;
     imageSource: string;
     tags?: string[];
+    error?: string;
 
 }
 
