@@ -5,7 +5,8 @@ const nextConfig: NextConfig = {
     domains: [
       's3.amazonaws.com',
       'cdn.shopify.com', // For the placeholder image
-      'knowt.com'
+      'knowt.com',
+      'i.scdn.co'
     ],
     remotePatterns: [
       {
@@ -13,6 +14,11 @@ const nextConfig: NextConfig = {
         hostname: '**',
         port: '',
         pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.scdn.co',
+        pathname: '/**',
       },
     ],
   },
