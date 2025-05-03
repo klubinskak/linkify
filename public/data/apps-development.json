@@ -1,0 +1,114 @@
+{
+    "topic": "Apps Development",
+    "subtopics": [
+      {
+        "name": "Packages",
+        "links": [
+            {
+                "title": "Bundlephobia",
+                "url": "https://bundlephobia.com/",
+                "tags": ["Free"]
+            }
+        ]
+      }
+    ]
+  }
+  
+
+
+
+
+{
+    "topic": "Apps Development",
+    "subtopics": [
+      {
+        "name": "Packages",
+        "links": [
+            {
+                "title": "Shadcn UI",
+                "url": "https://ui.shadcn.com/",
+                "tags": ["Free", "React", "UI"]
+            },
+            {
+                "title": "Radix UI",
+                "url": "https://www.radix-ui.com/",
+                "tags": ["Free", "React", "Components"]
+            },
+            {
+                "title": "TanStack Query",
+                "url": "https://tanstack.com/query/latest",
+                "tags": ["Free", "React", "Data Fetching"]
+            },
+            {
+                "title": "Framer Motion",
+                "url": "https://www.framer.com/motion/",
+                "tags": ["Free", "React", "Animation"]
+            },
+            {
+                "title": "Zustand",
+                "url": "https://zustand-demo.pmnd.rs/",
+                "tags": ["Free", "React", "State Management"]
+            },
+            {
+                "title": "Tailwind CSS",
+                "url": "https://tailwindcss.com/",
+                "tags": ["Free", "CSS", "Styling"]
+            }
+        ]
+      },
+      {
+        "name": "Tools",
+        "links": [
+            {
+                "title": "Vercel",
+                "url": "https://vercel.com/",
+                "tags": ["Free", "Hosting", "Deployment"]
+            },
+            {
+                "title": "Supabase",
+                "url": "https://supabase.com/",
+                "tags": ["Free", "Database", "Backend"]
+            },
+            {
+                "title": "Prisma",
+                "url": "https://www.prisma.io/",
+                "tags": ["Free", "ORM", "Database"]
+            },
+            {
+                "title": "Stripe",
+                "url": "https://stripe.com/",
+                "tags": ["Free", "Payments", "API"]
+            },
+            {
+                "title": "Auth.js",
+                "url": "https://authjs.dev/",
+                "tags": ["Free", "Authentication", "Security"]
+            }
+        ]
+      },
+      {
+        "name": "Testing",
+        "links": [
+            {
+                "title": "Vitest",
+                "url": "https://vitest.dev/",
+                "tags": ["Free", "Testing", "Unit Tests"]
+            },
+            {
+                "title": "Playwright",
+                "url": "https://playwright.dev/",
+                "tags": ["Free", "Testing", "E2E"]
+            },
+            {
+                "title": "Testing Library",
+                "url": "https://testing-library.com/",
+                "tags": ["Free", "Testing", "React"]
+            }
+        ]
+      }
+    ]
+  }
+  
+
+
+

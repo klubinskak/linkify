@@ -19,7 +19,6 @@ export function Navbar() {
     setTheme("dark");
   });
 
-  console.log(theme);
   return (
     <header className="shadow p-5 md:p-2 border-b">
       <div className="mx-2 flex items-center justify-center md:justify-between">

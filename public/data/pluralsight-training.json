@@ -1,0 +1,17 @@
+{
+  "topic": "Pluralsight Training",
+  "subtopics": [
+    {
+      "name": "Angular Training",
+      "links": []
+    },
+    {
+      "name": "React Training",
+      "links": []
+    },
+    {
+      "name": "Vue Training",
+      "links": []
+    }
+  ]
+} 

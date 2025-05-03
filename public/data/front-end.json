@@ -1,0 +1,159 @@
+{
+    "topic": "Front-end",
+    "subtopics": [
+      {
+        "name": "React UI Libraries",
+        "links": [
+          {
+            "title": "Material UI",
+            "url": "https://mui.com/",
+            "tags": ["Free", "React", "UI", "Popular"]
+          },
+          {
+            "title": "Chakra UI",
+            "url": "https://chakra-ui.com/",
+            "tags": ["Free", "React", "Accessible", "Modern"]
+          },
+          {
+            "title": "Mantine",
+            "url": "https://mantine.dev/",
+            "tags": ["Free", "React", "TypeScript", "Modern"]
+          },
+          {
+            "title": "NextUI",
+            "url": "https://nextui.org/",
+            "tags": ["Free", "React", "Modern", "Beautiful"]
+          },
+          {
+            "title": "DaisyUI",
+            "url": "https://daisyui.com/",
+            "tags": ["Free", "Tailwind", "Components"]
+          }
+        ]
+      },
+      {
+        "name": "CSS Frameworks",
+        "links": [
+          {
+            "title": "Tailwind CSS",
+            "url": "https://tailwindcss.com/",
+            "tags": ["Free", "Utility", "Popular"]
+          },
+          {
+            "title": "Bootstrap",
+            "url": "https://getbootstrap.com/",
+            "tags": ["Free", "CSS", "Popular"]
+          },
+          {
+            "title": "Bulma",
+            "url": "https://bulma.io/",
+            "tags": ["Free", "Modern", "Flexbox"]
+          },
+          {
+            "title": "UnoCSS",
+            "url": "https://unocss.dev/",
+            "tags": ["Free", "Atomic", "Performance"]
+          },
+          {
+            "title": "Open Props",
+            "url": "https://open-props.style/",
+            "tags": ["Free", "CSS Variables", "Modern"]
+          }
+        ]
+      },
+      {
+        "name": "Animation",
+        "links": [
+          {
+            "title": "GSAP",
+            "url": "https://greensock.com/gsap/",
+            "tags": ["Free", "Animation", "Professional"]
+          },
+          {
+            "title": "Motion One",
+            "url": "https://motion.dev/",
+            "tags": ["Free", "Performance", "Modern"]
+          },
+          {
+            "title": "AutoAnimate",
+            "url": "https://auto-animate.formkit.com/",
+            "tags": ["Free", "Easy", "Zero-config"]
+          },
+          {
+            "title": "Lottie",
+            "url": "https://airbnb.design/lottie/",
+            "tags": ["Free", "Vector", "After Effects"]
+          }
+        ]
+      },
+      {
+        "name": "Development Tools",
+        "links": [
+          {
+            "title": "Storybook",
+            "url": "https://storybook.js.org/",
+            "tags": ["Free", "Documentation", "Testing"]
+          },
+          {
+            "title": "ReactBits", 
+            "url": "https://www.reactbits.dev/",
+            "tags": ["Free"]
+          },
+          {
+            "title": "Getjustd",
+            "url": "getjustd.com",
+            "tags": ["Free"]
+          }
+        ]
+      },
+      {
+        "name": "React Libraries",
+        "links": [
+          {
+            "title": "Reacthaiku",
+            "url": "https://www.reacthaiku.dev/",
+            "tags": ["Free"]
+            "title": "React DevTools",
+            "url": "https://react.dev/learn/react-developer-tools",
+            "tags": ["Free", "Debug", "Development"]
+          },
+          {
+            "title": "Lighthouse",
+            "url": "https://developers.google.com/web/tools/lighthouse",
+            "tags": ["Free", "Performance", "SEO"]
+          },
+          {
+            "title": "Vite",
+            "url": "https://vitejs.dev/",
+            "tags": ["Free", "Build Tool", "Fast"]
+          }
+        ]
+      },
+      {
+        "name": "Design Tools",
+        "links": [
+          {
+            "title": "Figma",
+            "url": "https://www.figma.com/",
+            "tags": ["Free", "Design", "Collaboration"]
+          },
+          {
+            "title": "Penpot",
+            "url": "https://penpot.app/",
+            "tags": ["Free", "Open Source", "Design"]
+          },
+          {
+            "title": "Spline",
+            "url": "https://spline.design/",
+            "tags": ["Free", "3D", "Interactive"]
+          },
+          {
+            "title": "Webflow",
+            "url": "https://webflow.com/",
+            "tags": ["Visual", "No-code", "Professional"]
+          }
+        ]
+      }
+    ]
+  }
+  

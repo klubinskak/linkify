@@ -8,7 +8,6 @@ interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
   ({ placeholder = "Search...", ...props }, ref) => {
-    console.log(props);
 
     return (
       <div className="relative flex items-center rounded">

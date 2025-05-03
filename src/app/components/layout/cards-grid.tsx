@@ -3,6 +3,7 @@
 import { HyperText } from "@/components/ui/hyper-text";
 import { LinkModel } from "@/models/link";
 import Link from "next/link";
+import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import axios, { AxiosError, AxiosResponse } from "axios";
@@ -35,8 +36,6 @@ const CardsGrid: React.FC<CardsGridProps> = ({ totalLinks }) => {
         setLinkWithMetadata(data.urlWithMetadata);
       } catch (err) {
         console.error("Error fetching metadata:", err);
-      } finally {
-        console.log("Metadata fetched successfully");
       }
     }
 
@@ -76,16 +75,13 @@ const CardsGrid: React.FC<CardsGridProps> = ({ totalLinks }) => {
         <div className="opacity-70 hover:opacity-100 relative group w-full border border-white/10 dark:border-gray-700 flex justify-center items-center flex-col rounded-2xl h-64 md:h-52 bg-gradient-to-br from-gray-500/5 via-transparent to-transparent p-4 backdrop-blur-sm transition-all shadow-lg">
           {linkWithMetadata && (
             <>
-              <img
-                src="/grid white 1.png"
-                alt="grid"
-                className="absolute inset-0 w-full h-full object-cover opacity-35 rounded-2xl"
-              />
               <div className="relative w-full h-full">
-                <img
+                <Image
                   src={linkWithMetadata.image}
                   alt={linkWithMetadata.title}
                   className="p-3 rounded rounded-[30px] absolute inset-0 w-full h-full object-cover"
+                  width={500}
+                  height={300}
                 />
               </div>
               <div className="absolute top-4 left-3  bg-yellow-500 text-white rounded-full px-3 py-1 text-xs font-bold flex items-center justify-center shadow-md">
@@ -103,18 +99,20 @@ const CardsGrid: React.FC<CardsGridProps> = ({ totalLinks }) => {
 
       {/* Second Card */}
       <div className="opacity-70 hover:opacity-100 relative group w-full border border-white/10 flex justify-center items-center flex-col rounded-2xl h-64 md:h-52 bg-gradient-to-br from-gray-500/5 via-transparent to-transparent p-4 backdrop-blur-sm transition-all shadow-lg">
-        <img
+        <Image
           src="/grid white 1.png"
           alt="grid"
           className="absolute inset-0 w-full h-full object-cover opacity-35 rounded-2xl"
+          width={500}
+          height={300}
         />
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-400/10 to-purple-400/10 opacity-0 transition-opacity" />
-        <HyperText
-          className="text-5xl font-panchang font-bold z-10 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent animate-count-up"
-          text={(Math.floor(totalLinks / 10) * 10).toString() + "+"}
+        <div className="flex flex-col items-center justify-center z-10">
+          <HyperText
+            className="text-5xl font-panchang font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent animate-count-up"
+            text={(Math.floor(totalLinks / 10) * 10).toString() + "+"}
           />
-        <div className="flex gap-2 mt-2">
-          <h3 className="text-sm font-medium font-excon">
+          <h3 className="text-sm font-medium font-excon mt-2">
             links & still counting
           </h3>
         </div>
@@ -122,10 +120,12 @@ const CardsGrid: React.FC<CardsGridProps> = ({ totalLinks }) => {
 
       {/* Third Card */}
       <div className="opacity-70 hover:opacity-100 relative group w-full border border-white/10 flex justify-center items-center flex-col rounded-2xl h-64 md:h-52 bg-gradient-to-br from-gray-500/5 via-transparent to-transparent p-4 backdrop-blur-sm transition-all shadow-lg hover:shadow-xl md:col-span-2 lg:col-span-1">
-        <img
+        <Image
           src="/grid white 1.png"
           alt="grid"
           className="absolute inset-0 w-full h-full object-cover opacity-35 rounded-2xl"
+          width={500}
+          height={300}
         />
         <div className="flex flex-col z-10 text-center w-full">
           <h3 className="text-xl font-medium font-panchang px-8">

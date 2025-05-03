@@ -1,10 +1,12 @@
 import LinksGrid from ".";
+import { promises as fs } from 'fs';
+import path from 'path';
 
 export async function generateStaticParams() {
-  // Fetch or define the list of topics
-  const indexData: IndexModel []= await import(
-    `../../../../../data/index.json`
-  ).then((module) => module.default);
+  // Read the index data from the public directory
+  const indexData: IndexModel[] = JSON.parse(
+    await fs.readFile(path.join(process.cwd(), 'public/data/index.json'), 'utf8')
+  );
 
   // Map topics to params
   return indexData.map((item) => ({
@@ -17,7 +19,6 @@ interface IndexModel {
   subtitles: string[];
   source: string;
 }
-
 
 export default async function Page({ params }: { params: Promise<{ topic: string, subtopic: string }> }) {
   const topic = (await params).topic;
