@@ -134,6 +134,9 @@ Special thanks to:
 - [Next.js Team](https://nextjs.org/)
 - [Vercel](https://vercel.com/)
 - [Shadcn](https://twitter.com/shadcn)
+- [MagicUI](https://magicui.design/)
+- [Fontshare](https://fontshare.com/)
+
 - All the amazing resource creators
 
 ## 📞 Contact
@@ -144,8 +147,3 @@ Special thanks to:
 ---
 
 Made with ❤️ by Klaudia
-
-## Creadits to 
-
-- https://magicui.design/
-- https://fontshare.com/
