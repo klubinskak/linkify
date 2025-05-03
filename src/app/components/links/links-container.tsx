@@ -20,7 +20,6 @@ const LinksContainer = () => {
   const { closeModal } = useSidebar();
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [linksData, setLinksData] = useState<LinksData[] | null>(null);
-  const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState<LinksData[]>([]);
   const [query, setQuery] = useState("");
   const isMediumOrLarger = useMediaQuery({ query: "(min-width: 768px)" });

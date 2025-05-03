@@ -95,7 +95,7 @@
             "tags": ["Free", "Documentation", "Testing"]
           },
           {
-            "title": "ReactBits", 
+            "title": "ReactBits",
             "url": "https://www.reactbits.dev/",
             "tags": ["Free"]
           },
@@ -113,6 +113,8 @@
             "title": "Reacthaiku",
             "url": "https://www.reacthaiku.dev/",
             "tags": ["Free"]
+          },
+          {
             "title": "React DevTools",
             "url": "https://react.dev/learn/react-developer-tools",
             "tags": ["Free", "Debug", "Development"]
@@ -155,5 +157,5 @@
         ]
       }
     ]
-  }
+}
   
