@@ -29,8 +29,12 @@ const LinksContainer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const timestamp = new Date().getTime();
-        const data = (await import(`../../../../data/index.json?update=${timestamp}`)).default as LinksData[];
+        const timestamp = process.env.NODE_ENV === 'development' ? `?t=${new Date().getTime()}` : '';
+        const response = await fetch(`/data/index.json${timestamp}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const data = await response.json() as LinksData[];
         setLinksData(data);
         setFilteredData(data);
       } catch (error) {
