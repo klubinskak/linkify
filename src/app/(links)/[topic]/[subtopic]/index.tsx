@@ -7,6 +7,12 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import Image from "next/image";
 import { formatLabel } from "@/lib/utils";
+
+const truncateToWords = (str: string, numWords: number, showEllipsis: boolean = true) => {
+  const words = str.split(' ');
+  if (words.length <= numWords) return str;
+  return words.slice(0, numWords).join(' ') + (showEllipsis ? '...' : '');
+};
 import { LinkModel } from "@/models/link";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -139,7 +145,7 @@ export default function LinksGrid({
                   </div>
                 </div>
                 <CardHeader className="h-[7rem]">
-                  <CardTitle className="text-left">{link.title}</CardTitle>
+                  <CardTitle className="text-left">{truncateToWords(link.title, 5, false)}</CardTitle>
                   <p
                     className="text-sm overflow-hidden text-ellipsis whitespace-normal"
                     style={{

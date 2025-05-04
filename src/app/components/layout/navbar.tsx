@@ -16,8 +16,10 @@ export function Navbar() {
   const { theme , setTheme} = useTheme();
 
   useEffect(() => {
-    setTheme("dark");
-  });
+    if (!theme) {
+      setTheme("dark");
+    }
+  }, []);  //for later
 
   return (
     <header className="shadow p-5 md:p-2 border-b">

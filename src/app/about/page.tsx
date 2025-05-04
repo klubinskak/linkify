@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="min-h-screen p-6 md:p-8 bg-gradient-to-b from-gray-900 via-gray-950 to-black">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen p-6 md:p-4">
+      <div className="max-w-5xl mx-auto">
         {/* Header Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -14,7 +14,7 @@ const About = () => {
           transition={{ duration: 0.5 }}
           className="mb-12 relative"
         >
-          <h1 className="text-2xl md:text-4xl font-bold mb-4 font-excon bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h1 className="text-2xl md:text-4xl font-bold mb-4 font-excon text-white bg-clip-text text-transparent">
             About Me
           </h1>
           <div className="h-1 w-20 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full shadow-lg shadow-blue-400/20"></div>

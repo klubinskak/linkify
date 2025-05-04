@@ -95,13 +95,8 @@
             "tags": ["Free", "Documentation", "Testing"]
           },
           {
-            "title": "ReactBits",
-            "url": "https://www.reactbits.dev/",
-            "tags": ["Free"]
-          },
-          {
             "title": "Getjustd",
-            "url": "getjustd.com",
+            "url": "https://getjustd.com",
             "tags": ["Free"]
           }
         ]

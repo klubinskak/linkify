@@ -3,15 +3,13 @@
   "subtopics": [
     {
       "name": "Angular Training",
-      "links": []
-    },
-    {
-      "name": "React Training",
-      "links": []
-    },
-    {
-      "name": "Vue Training",
-      "links": []
+      "links": [
+        {
+          "title": "Angular Reactive Forms",
+          "url": "https://www.pluralsight.com/courses/angular-2-reactive-forms",
+          "tags": ["Paid"]
+        }
+      ]
     }
   ]
 } 
