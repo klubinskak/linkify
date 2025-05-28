@@ -5,7 +5,7 @@ import Slider from "../ui/slider";
 import { Slide1 } from "../ui/slides/slide1";
 import CardsGrid from "./cards-grid";
 import Notification from "./notification";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { TrendingUp, Zap, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -25,11 +25,7 @@ interface TrendingTool {
 export function HomeClient({ totalLinks }: HomeClientProps) {
   const [trendingTools, setTrendingTools] = useState<TrendingTool[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   useEffect(() => {
     const fetchTrendingTools = async () => {
