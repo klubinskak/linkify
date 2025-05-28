@@ -10,13 +10,13 @@ export function Slide2({ video }: Slide2Props) {
     <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-background/95 via-background/90 to-background/80">
       <div className="absolute inset-0 bg-grid-white/5 [mask-image:radial-gradient(at_center,white,transparent_70%)]" />
 
-      <div className="py-12 container mx-auto px-4 h-full flex items-center">
-        <div className="md:grid md:grid-cols-2 lg:grid-cols-2 items-center">
+      <div className="py-2 container mx-auto px-4 h-full flex items-center">
+        <div className="flex flex-col justify-center items-center w-full md:grid md:grid-cols-2 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="absolute -top-[30px] md:static md:top-0 z-20 space-y-3 py-22 ml-8 lg:ml-12 xl:ml-20"
+            className="absolute -top-[30px] mb-14 md:static md:-top-10 z-20 space-y-3 ml-4 lg:ml-12 xl:ml-20"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,7 @@ export function Slide2({ video }: Slide2Props) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl xl:text-3xl pt-12 font-semibold text-foreground leading-tight"
             >
-              Modern Portfolio Templates
+              Stand Out & Land Your Dream Job
             </motion.h1>
 
             <motion.p
@@ -33,12 +33,15 @@ export function Slide2({ video }: Slide2Props) {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xs xl:text-sm text-muted-foreground max-w-md leading-relaxed"
             >
-              <span className="sm:hidden">Elevate your online presence with a sleek, and fully
-              customizable portfolio website.</span>
+              <span className="sm:hidden">
+                Make a lasting impression with a stunning, job-winning portfolio
+                — built in minutes.
+              </span>
               <span className="hidden sm:inline">
-                Elevate your online presence with a sleek, modern, and fully
-                customizable portfolio website. Designed to showcase your work in
-                couple clicks with style!
+                Your portfolio is your first impression. Make it count with a
+                sleek, professional design that showcases your skills and helps
+                you land more interviews, clients, or freelance gigs — all in
+                just a few clicks.
               </span>
             </motion.p>
 
