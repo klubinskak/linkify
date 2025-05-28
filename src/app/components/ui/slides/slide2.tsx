@@ -11,18 +11,18 @@ export function Slide2({ video }: Slide2Props) {
       <div className="absolute inset-0 bg-grid-white/5 [mask-image:radial-gradient(at_center,white,transparent_70%)]" />
 
       <div className="py-12 container mx-auto px-4 h-full flex items-center">
-        <div className="grid grid-cols-2 lg:grid-cols-2 items-center">
+        <div className="md:grid md:grid-cols-2 lg:grid-cols-2 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-3 py-12 lg:py-24 ml-8 lg:ml-12 xl:ml-20"
+            className="absolute -top-[30px] md:static md:top-0 z-20 space-y-3 py-22 ml-8 lg:ml-12 xl:ml-20"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl xl:text-3xl font-semibold text-foreground leading-tight"
+              className="text-xl xl:text-3xl pt-12 font-semibold text-foreground leading-tight"
             >
               Modern Portfolio Templates
             </motion.h1>
@@ -33,13 +33,17 @@ export function Slide2({ video }: Slide2Props) {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xs xl:text-sm text-muted-foreground max-w-md leading-relaxed"
             >
-              Elevate your online presence with a sleek, modern, and fully
-              customizable portfolio website. Designed to showcase your work in
-              couple clicks with style!
+              <span className="sm:hidden">Elevate your online presence with a sleek, and fully
+              customizable portfolio website.</span>
+              <span className="hidden sm:inline">
+                Elevate your online presence with a sleek, modern, and fully
+                customizable portfolio website. Designed to showcase your work in
+                couple clicks with style!
+              </span>
             </motion.p>
 
             <Link href="https://klaudiadev.gumroad.com/l/modern-fully-cusotmize-portfolio">
-              <button className="mt-12 cursor-pointer group relative bg-[#f8f9fa] hover:bg-zinc-300 text-black text-xs text-sm md:py-2 rounded-md transition-all duration-200 ease-in-out w-28 md:w-36 h-7 md:h-9">
+              <button className="mt-4 md:mt-6 cursor-pointer group relative bg-[#f8f9fa] hover:bg-zinc-300 text-black text-xs text-sm md:py-2 rounded-md transition-all duration-200 ease-in-out w-28 md:w-36 h-7 md:h-9">
                 <div className="relative flex items-center justify-center gap-2">
                   <span className="relative inline-block overflow-hidden">
                     <span className="block transition-transform duration-300 group-hover:-translate-y-full">
@@ -76,7 +80,7 @@ export function Slide2({ video }: Slide2Props) {
             <div className="absolute inset-0 -m-4 bg-gradient-to-br from-primary/30 via-purple-500/20 to-secondary/30 rounded-3xl blur-xl opacity-30 group-hover:opacity-90 transition-all duration-500">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent via-transparent to-white/5 mix-blend-overlay rounded-3xl"></div>
             </div>
-            <div className="relative w-full max-w-2xl">
+            <div className="relative top-[100px] sm:top-[160px] md:top-0 w-full max-w-2xl">
               <div className="relative w-full max-w-2xl">
                 {/* Discount tag positioned absolutely relative to outer wrapper */}
                 <div className="absolute top-0 right-0 sm:-top-26 sm:-right-5 z-20">
