@@ -5,9 +5,11 @@ import Slider from "../ui/slider";
 import { Slide1 } from "../ui/slides/slide1";
 import CardsGrid from "./cards-grid";
 import Notification from "./notification";
-import { motion } from "framer-motion";
-import { TrendingUp, Zap } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { TrendingUp, Zap, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+import { Slide2 } from "../ui/slides/slide2";
 
 interface HomeClientProps {
   totalLinks: number;
@@ -23,6 +25,11 @@ interface TrendingTool {
 export function HomeClient({ totalLinks }: HomeClientProps) {
   const [trendingTools, setTrendingTools] = useState<TrendingTool[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   useEffect(() => {
     const fetchTrendingTools = async () => {
@@ -41,8 +48,8 @@ export function HomeClient({ totalLinks }: HomeClientProps) {
   }, []);
 
   const slides = [
+    { component: <Slide2 video={"/slide2-video.mp4"} /> },
     { component: <Slide1 image={"/slide1-bg.png"} /> },
-    //{ component: <Slide2 image={"/slide2-bg.png"} /> },
   ];
 
   return (
@@ -53,10 +60,13 @@ export function HomeClient({ totalLinks }: HomeClientProps) {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         className="w-full mb-8"
       >
-        <Slider slides={slides} />
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent" />
+          <Slider slides={slides} />
+        </div>
       </motion.div>
 
       {/* Main Content */}
@@ -69,12 +79,34 @@ export function HomeClient({ totalLinks }: HomeClientProps) {
         >
 
           {/* Trending Section */}
-          <div className="mb-16">
-            <div className="flex items-center gap-2 mb-8">
-              <TrendingUp className="w-6 h-6 text-white-500" />
-              <h3 className="text-xl font-bold font-excon text-foreground">Trending Now</h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-8"
+          >
+            <motion.div 
+              className="relative mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <div className="flex items-center justify-center md:justify-start gap-3">
+                <div className="relative">
+                  <TrendingUp className="w-5 h-5 text-primary" />
+                  <motion.div 
+                    className="absolute inset-0 rounded-full"
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 1 }}
+                    transition={{ duration: 0.2 }}
+                  />
+                </div>
+                <h3 className="text-xl text-center md:text-right font-semibold text-foreground">
+                  Trending Now
+                </h3>
+              </div>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {isLoading ? (
                 // Loading skeleton
                 [...Array(3)].map((_, index) => (
@@ -101,16 +133,20 @@ export function HomeClient({ totalLinks }: HomeClientProps) {
                       key={tool.title}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: 0.1 * index }}
-                      className="bg-background/30 backdrop-blur-sm p-6 rounded-2xl border border-border/50 hover:border-border/80 transition-all group cursor-pointer h-[160px]"
+                      transition={{ duration: 0.4, delay: 0.1 * index }}
+                      className={cn(
+                        "relative bg-background/30 backdrop-blur-sm p-6 rounded-2xl border border-border/50 hover:border-border/80 transition-all group cursor-pointer h-[160px]",
+                        "hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02] transform-gpu"
+                      )}
                     >
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       <div className="flex items-start mb-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br flex items-center justify-center">
-                            <Zap className="w-5 h-5 text-foreground" />
+                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center">
+                            <Zap className="w-5 h-5 text-primary" />
                           </div>
                           <div>
-                            <h4 className="font-medium text-foreground group-hover:text-foreground transition-colors">{tool.title}</h4>
+                            <h4 className="font-medium text-foreground group-hover:text-primary transition-colors">{tool.title}</h4>
                             <p className="text-sm text-muted-foreground">{tool.subtopic}</p>
                           </div>
                         </div>
@@ -118,12 +154,22 @@ export function HomeClient({ totalLinks }: HomeClientProps) {
                       <p className="text-sm text-muted-foreground line-clamp-2">
                         {tool.description}
                       </p>
+                      <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <motion.div 
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ duration: 0.3 }}
+                          className="w-4 h-4 text-primary"
+                        >
+                          <Sparkles />
+                        </motion.div>
+                      </div>
                     </motion.div>
                   </Link>
                 ))
               )}
             </div>
-          </div>
+          </motion.div>
 
           <CardsGrid totalLinks={totalLinks} />
         </motion.div>

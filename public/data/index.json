@@ -108,5 +108,16 @@
         "size": "w-5 h-5",
         "color": "text-gray-200"
       }
+    },
+    {
+      "title": "Store",
+      "subtitles": ["Templates", "Books", "Courses"],
+      "source": "store.json",
+      "icon": {
+        "name": "Store",
+        "size": "w-5 h-5",
+        "color": "text-gray-200"
+      }, 
+      "pin": "true"
     }
   ]

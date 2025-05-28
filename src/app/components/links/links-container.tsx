@@ -131,7 +131,13 @@ const LinksContainer = () => {
         ) : (
           <ul>
         <li>
-              {filteredData.map((link) => (
+              {...filteredData
+              .sort((a,b) => {
+                if(a.pin && !b.pin) return -1;
+                if(!a.pin && b.pin) return 1;
+                return 0;
+              })
+              .map((link) => (
               <Accordion
                 type="single"
                 collapsible

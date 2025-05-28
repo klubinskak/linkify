@@ -1,0 +1,46 @@
+{
+    "topic": "Store",
+    "subtopics": [
+      {
+        "name": "Templates",
+        "links": [
+            {
+                "title": "Modern Portfolio",
+                "url": "https://klaudiadev.gumroad.com/l/modern-fully-cusotmize-portfolio",
+                "tags": ["Paid"]
+            }
+        ]
+      },
+      {
+        "name": "Books",
+        "links": [
+            {
+                "title": "A Comprehensive Cheat Sheet for Mastering GIT",
+                "url": "https://klaudiadev.gumroad.com/l/cwektt",
+                "tags": ["Free"]
+            },
+            {
+                "title": "Clean Code",
+                "url": "https://www.amazon.pl/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=asc_df_0132350882?mcid=7f280e98136b3cae9f0148c22daa79c8&tag=plshogostdde-21&linkCode=df0&hvadid=719657155183&hvpos=&hvnetw=g&hvrand=470095276821933366&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=20858&hvtargid=pla-435472505264&psc=1&language=pl_PL&gad_source=1",
+                "tags": ["Paid"]
+            }
+        ]
+      },
+      {
+        "name": "Courses",
+        "links": [
+            {
+                "title": " Angular 19 (Angular Signals, defer, @if @for): Advanced Features of the Angular Core and Common modules",
+                "url": "https://www.udemy.com/course/angular-course/",
+                "tags": ["Paid"]
+            },
+            {
+                "title": "Fluter with Dart: The Complete Guide",
+                "url": "https://www.udemy.com/course/flutter-bootcamp-with-dart/?couponCode=ST6MT60525G2",
+                "tags": ["Paid"]
+            }
+        ]
+      }
+    ]
+  }
+  

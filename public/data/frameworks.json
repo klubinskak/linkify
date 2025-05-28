@@ -43,6 +43,11 @@
                 "title": "Joshua Morony",
                 "url": "https://www.youtube.com/@JoshuaMorony/videos",
                 "tags": ["Free"]
+            }, 
+            {
+                "title": "Angular Can I use?",
+                "url": "https://www.angular.courses/caniuse",
+                "tags": ["Free"]
             }
         ]
       }

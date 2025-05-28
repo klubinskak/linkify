@@ -33,6 +33,7 @@ export interface LinksData {
   subtitles: string[];
   source: string;
   icon: IconData;
+  pin?: boolean;
 }
 
 export interface Subtopic {
